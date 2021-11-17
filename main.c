@@ -57,13 +57,18 @@ int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
      tfrec = 255-((tfrec/2)/(.0002*128));
 
        for(b=0;b<duracion2;b++){
-           
-            PORTAbits.RA0 = 1;
+            if(PORTBbits.RB0 == 1){
+                                    k = 0;
+                                }
+                                else{
+                                    k = 1;
+                                }
+           PORTBbits.RB1 = 1;
            TMR0 = tfrec;
            while(INTCONbits.TMR0IF==0);
            INTCONbits.TMR0IF=0;
   
-        PORTAbits.RA0=0;
+        PORTBbits.RB1=0;
          TMR0 = tfrec;
          while(INTCONbits.TMR0IF==0);
          INTCONbits.TMR0IF=0;
@@ -76,12 +81,18 @@ int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
      tfrec = 255-((tfrec/2)/(.0002*128));
 
        for(b=0;b<duracion;b++){
-            PORTAbits.RA0 = 0;
+                       if(PORTBbits.RB0 == 1){
+                                    k = 0;
+                                }
+                                else{
+                                    k = 1;
+                                }
+            PORTBbits.RB1 = 0;
            TMR0 = tfrec;
            while(INTCONbits.TMR0IF==0);
            INTCONbits.TMR0IF=0;
   
-        PORTAbits.RA0=0;
+        PORTBbits.RB1=0;
          TMR0 = tfrec;
          while(INTCONbits.TMR0IF==0);
          INTCONbits.TMR0IF=0;
@@ -102,11 +113,24 @@ int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
 
 
  }
+ void confADC(){
+     ADCON1 = 0b00001110;
+    ADCON2 = 0b10111010;	//10111010
+    ADRESH=0;		
+    ADRESL=0;   
 
-
+ }
+ int leerADC(int canal){
+    int digital;
+    int final;
+    ADCON0 =(ADCON0 & 0b11000011)|((canal<<2) & 0b00111100);  
+    ADCON0 |= ((1<<ADON)|(1<<GO));	
+    while(ADCON0bits.GO_nDONE==1);
+    digital = ((ADRESH << 8) + ADRESL);	
+    final = digital/64;
+    return(final);
+ }
  
- 
-      
   float cancion[44][3] =     
   {
  { 1, 3.034,1},{ 1, 3.034,1},{ 1,3.034,1},{( .75),3.82,1},{( .25),2.55,1},{ 1,3.034,1},{( .75),3.82,1},{( .25),2.551,1},{( 2),3.034,1},{(1),2.028,1},
@@ -120,20 +144,20 @@ void cancion1(){
 
 for( int j = 0; j < 44; j ++){
         
-if(i < 15 && l > 0){
+if(i < 15 && l >= 0 && f == 0){
      // 0 - 14--15 & 15 - 1--0
       
                         if(cancion[j][2] == 1){
-                                  if(PORTBbits.RB0 == 1){
+                               /*   if(PORTBbits.RB0 == 1){
                                     k = 0;
                                 }
                                 else{
                                     k = 1;
-                                }
-                                LCD_XY(1,15);
-                            sprintf(buffer1,"%i",l);  //Texto alineado a la izquierda
+                                }*/
+                            LCD_XY(1,16);
+                            sprintf(buffer1,"%i",leerADC(0));  //Texto alineado a la izquierda
                              LCD_Cadena(buffer1);
-                                LCD_XY(k,i);
+                                LCD_XY(k,leerADC(0));
                                 LCD_Data(0);
                                 LCD_XY(1,l);
                                 LCD_Data(1);
@@ -143,68 +167,58 @@ if(i < 15 && l > 0){
                      }
 
                      else if(cancion[j][2] == 0){
-                         
-                                                       if(PORTBbits.RB0 == 1){
-                                    k = 0;
-                                }
-                                else{
-                                    k = 1;
-                                }
-                                LCD_XY(1,15);
-                            sprintf(buffer1,"%i",l);  //Texto alineado a la izquierda
+                                                        LCD_XY(1,16);
+                            sprintf(buffer1,"%i",leerADC(0));  //Texto alineado a la izquierda
                              LCD_Cadena(buffer1);
-                                LCD_XY(k,i);
+                                LCD_XY(k,leerADC(0));
                                 LCD_Data(0);
                                 LCD_XY(1,l);
-                                LCD_Data(1);
-                         silencio(vel*cancion[j][0],cancion[j][1]);
+                                LCD_Data(1); 
+                  silencio(vel*cancion[j][0],cancion[j][1]);
 
 
 
-                     } 
+                     }
             LCD_Comando(1);
             i++;
             l--;
-         //   f = 0;
+         f = 0;
+         if(i == 14){
+             f = 1;
+         }
+         
+         
         } 
 
-       //     f = 1;
-else if(i > 0 && l < 15 ){
+       //     f = 1;        i < 15 && l > 0
+else if(i >= 0 &&  l < 15 && f == 1 ){
        // 14-0 &  1-15
                       if(cancion[j][2] == 1){
-                                   if(PORTBbits.RB0 == 1){
-                                    k = 0;
-                                }
-                                else{
-                                    k = 1;
-                                }
-                                LCD_XY(1,15);
-                            sprintf(buffer1,"%i",l);  //Texto alineado a la izquierda
+                                                          LCD_XY(1,16);
+                            sprintf(buffer1,"%i",leerADC(0));  //Texto alineado a la izquierda
                              LCD_Cadena(buffer1);
-                                LCD_XY(k,i);
+                                LCD_XY(k,leerADC(0));
                                 LCD_Data(0);
                                 LCD_XY(1,l);
                                 LCD_Data(2);
-                         tocar_nota(vel*cancion[j][0],cancion[j][1]);
+                            tocar_nota(vel*cancion[j][0],cancion[j][1]);
+
+
 
 
                      }
 
                      else if(cancion[j][2] == 0){
-                             if(PORTBbits.RB0 == 1){
-                                    k = 0;
-                                }
-                                else{
-                                    k = 1;
-                                }
-                               LCD_XY(1,15);
-                            sprintf(buffer1,"%i",l);  //Texto alineado a la izquierda
+                               LCD_XY(1,16);
+                            sprintf(buffer1,"%i",leerADC(0));  //Texto alineado a la izquierda
                              LCD_Cadena(buffer1);
-                                LCD_XY(k,i);
+                                LCD_XY(k,leerADC(0));
                                 LCD_Data(0);
                                 LCD_XY(1,l);
                                 LCD_Data(2);
                          silencio(vel*cancion[j][0],cancion[j][1]);
+
+
 
 
 
@@ -212,12 +226,15 @@ else if(i > 0 && l < 15 ){
             LCD_Comando(1);
             i--;
             l++;
-      //      f = 1;
-        } 
+            f = 1;
+            
+             if(i == 0){
+             f = 0;
+         }
 
         
     }
-
+   }
 
 return;
  }
@@ -231,10 +248,10 @@ int main(int argc, char** argv) {
              LCD_Init();
              P1();
        confT0();
-           
+       confADC();    
              
-    TRISA =  0b00010000;
-    TRISB = 0b11111111;
+    TRISA =  0b00010001;
+    TRISB = 0b11111101;
 
              
            
@@ -242,52 +259,7 @@ int main(int argc, char** argv) {
 
 
     cancion1();
-   /*   while(i < 14 && l > 0){
-           
-            if(PORTBbits.RB0 == 1){
-                puntaje++;
-                k = 0;
-            }
-            else{
-                k = 1;
-            }
-                    LCD_XY(1,15);
-       sprintf(buffer1,"%i",puntaje);  //Texto alineado a la izquierda
-        LCD_Cadena(buffer1);
-            LCD_XY(k,i);
-            LCD_Data(0);
-            LCD_XY(1,l);
-            LCD_Data(1);
-            __delay_ms(100); 
-            LCD_Comando(1);
-            i++;
-            l--;
-        } 
-        
-
-      while(i > 0 && l < 14){
-
-           if(PORTBbits.RB0 == 1){
-              puntaje++;
-                k = 0;
-            }
-            else{
-                k = 1;
-            }
-                   LCD_XY(1,15);
-       sprintf(buffer1,"%i",puntaje);  //Texto alineado a la izquierda
-        LCD_Cadena(buffer1);
-            LCD_XY(k,i);
-            LCD_Data(0);
-            LCD_XY(1,l);
-            LCD_Data(2);
-            __delay_ms(100); 
-            LCD_Comando(1);
-            i--;
-            l++;
-        }
-      
-        */
+   
      
     }
  	
