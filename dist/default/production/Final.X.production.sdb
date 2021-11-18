@@ -21,6 +21,8 @@
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
 "43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
@@ -69,21 +71,21 @@
 [v _LCD_Cadena LCD_Cadena `(v  1 e 1 0 ]
 "102
 [v _LCD_Data LCD_Data `(v  1 e 1 0 ]
-"23 C:\Users\alana\MPLABXProjects\Final.X\main.c
+"27 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _P1 P1 `(v  1 e 1 0 ]
-"53
+"57
 [v _tocar_nota tocar_nota `(v  1 e 1 0 ]
-"78
+"82
 [v _silencio silencio `(v  1 e 1 0 ]
-"103
+"107
 [v _confT0 confT0 `(v  1 e 1 0 ]
-"116
+"133
 [v _confADC confADC `(v  1 e 1 0 ]
-"123
+"140
 [v _leerADC leerADC `(i  1 e 2 0 ]
-"143
-[v _cancion1 cancion1 `(v  1 e 1 0 ]
-"244
+"160
+[v _cancion1 cancion1 `(i  1 e 2 0 ]
+"320
 [v _main main `(i  1 e 2 0 ]
 [s S150 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -164,42 +166,71 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "6666
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S278 . 1 `uc 1 . 1 0 :1:0 
+[s S330 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "6710
-[s S281 . 1 `uc 1 ADON 1 0 :1:0 
+[s S333 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S285 . 1 `uc 1 . 1 0 :1:0 
+[s S337 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S292 . 1 `uc 1 . 1 0 :1:0 
+[s S344 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S295 . 1 `uc 1 . 1 0 :1:0 
+[s S347 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S298 . 1 `uc 1 . 1 0 :1:0 
+[s S350 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S301 . 1 `uc 1 . 1 0 :1:0 
+[s S353 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S304 . 1 `uc 1 . 1 0 :1:0 
+[s S356 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S307 . 1 `S278 1 . 1 0 `S281 1 . 1 0 `S285 1 . 1 0 `S292 1 . 1 0 `S295 1 . 1 0 `S298 1 . 1 0 `S301 1 . 1 0 `S304 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES307  1 e 1 @4034 ]
+[u S359 . 1 `S330 1 . 1 0 `S333 1 . 1 0 `S337 1 . 1 0 `S344 1 . 1 0 `S347 1 . 1 0 `S350 1 . 1 0 `S353 1 . 1 0 `S356 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES359  1 e 1 @4034 ]
 "6792
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "6799
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+[s S271 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"7448
+[s S274 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 T1RUN 1 0 :1:6 
+`uc 1 RD16 1 0 :1:7 
+]
+[s S282 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S288 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 T1RD16 1 0 :1:7 
+]
+[u S293 . 1 `S271 1 . 1 0 `S274 1 . 1 0 `S282 1 . 1 0 `S288 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES293  1 e 1 @4045 ]
+"7525
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"7532
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
 [s S245 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
@@ -255,72 +286,82 @@
 [v _nout nout `i  1 s 2 nout ]
 "14 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _buffer1 buffer1 `[23]uc  1 e 23 0 ]
+"16
+[v _puntos puntos `i  1 e 2 0 ]
 "17
-[v _k k `i  1 e 2 0 ]
+[v _vel vel `i  1 e 2 0 ]
 "18
-[v _f f `uc  1 e 1 0 ]
+[v _contador contador `i  1 e 2 0 ]
 "19
-[v _i i `i  1 e 2 0 ]
+[v _tiempo2 tiempo2 `i  1 e 2 0 ]
 "20
-[v _l l `i  1 e 2 0 ]
+[v _k k `i  1 e 2 0 ]
+"21
+[v _f f `uc  1 e 1 0 ]
 "22
+[v _i i `i  1 e 2 0 ]
+"23
+[v _l l `i  1 e 2 0 ]
+"24
+[v _tiempo tiempo `f  1 e 4 0 ]
+"26
 [v _b b `i  1 e 2 0 ]
-"134
+"151
 [v _cancion cancion `[44][3]f  1 e 528 0 ]
-"244
+"320
 [v _main main `(i  1 e 2 0 ]
 {
-"275
+"370
 } 0
-"103
+"107
 [v _confT0 confT0 `(v  1 e 1 0 ]
 {
-"115
+"119
 } 0
-"116
+"133
 [v _confADC confADC `(v  1 e 1 0 ]
 {
-"122
+"139
 } 0
-"143
-[v _cancion1 cancion1 `(v  1 e 1 0 ]
+"160
+[v _cancion1 cancion1 `(i  1 e 2 0 ]
 {
-"145
-[v cancion1@j j `i  1 a 2 12 ]
-"240
+"163
+[v cancion1@j j `i  1 a 2 18 ]
+"316
 } 0
-"53
+"57
 [v _tocar_nota tocar_nota `(v  1 e 1 0 ]
 {
-"55
-[v tocar_nota@duracion2 duracion2 `i  1 a 2 60 ]
-"53
-[v tocar_nota@duracion duracion `i  1 p 2 49 ]
-[v tocar_nota@tfrec tfrec `f  1 p 4 51 ]
-"77
+"59
+[v tocar_nota@duracion2 duracion2 `i  1 a 2 10 ]
+"57
+[v tocar_nota@duracion duracion `i  1 p 2 0 ]
+[v tocar_nota@tfrec tfrec `f  1 p 4 2 ]
+"81
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S868 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S941 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S868  1 a 6 2 ]
+[v sprintf@f f `S941  1 a 6 2 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 0 ]
 "9
 [v sprintf@s s `*.39uc  1 p 2 87 ]
-[v sprintf@fmt fmt `*.32Cuc  1 p 2 89 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 89 ]
 "23
 } 0
 "1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1393
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 85 ]
-[s S894 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 85 ]
+[s S967 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S894  1 p 2 79 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 81 ]
+[v vfprintf@fp fp `*.39S967  1 p 2 79 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 81 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 83 ]
 "1404
 } 0
@@ -329,10 +370,10 @@
 {
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 71 ]
-[s S894 _IO_FILE 0 ]
+[s S967 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S894  1 p 2 63 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 65 ]
+[v vfpfcnvrt@fp fp `*.39S967  1 p 2 63 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 65 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
 "1387
 } 0
@@ -346,9 +387,9 @@
 [v dtoa@s s `i  1 a 2 51 ]
 [v dtoa@w w `i  1 a 2 49 ]
 [v dtoa@p p `i  1 a 2 47 ]
-[s S894 _IO_FILE 0 ]
+[s S967 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S894  1 p 2 27 ]
+[v dtoa@fp fp `*.39S967  1 p 2 27 ]
 [v dtoa@d d `o  1 p 8 29 ]
 "328
 } 0
@@ -358,9 +399,9 @@
 "74
 [v pad@w w `i  1 a 2 25 ]
 [v pad@i i `i  1 a 2 23 ]
-[s S894 _IO_FILE 0 ]
+[s S967 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S894  1 p 2 16 ]
+[v pad@fp fp `*.39S967  1 p 2 16 ]
 [v pad@buf buf `*.39uc  1 p 2 18 ]
 [v pad@p p `i  1 p 2 20 ]
 "95
@@ -383,16 +424,16 @@
 [v fputs@c c `uc  1 a 1 13 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 9 ]
-[s S868 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S868  1 p 2 11 ]
+[s S941 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S941  1 p 2 11 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S868 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S868  1 p 2 2 ]
+[s S941 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S941  1 p 2 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
@@ -430,12 +471,12 @@
 [v ___aodiv@divisor divisor `o  1 p 8 8 ]
 "43
 } 0
-"78 C:\Users\alana\MPLABXProjects\Final.X\main.c
+"82 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _silencio silencio `(v  1 e 1 0 ]
 {
-[v silencio@duracion duracion `i  1 p 2 49 ]
-[v silencio@tfrec tfrec `f  1 p 4 51 ]
-"100
+[v silencio@duracion duracion `i  1 p 2 0 ]
+[v silencio@tfrec tfrec `f  1 p 4 2 ]
+"104
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -456,65 +497,65 @@
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 48 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 47 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 89 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 88 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 39 ]
+[v ___fltol@f1 f1 `d  1 p 4 80 ]
 "70
 } 0
 "245 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___flsub __flsub `(d  1 e 4 0 ]
 {
-[v ___flsub@b b `d  1 p 4 39 ]
-[v ___flsub@a a `d  1 p 4 43 ]
+[v ___flsub@b b `d  1 p 4 80 ]
+[v ___flsub@a a `d  1 p 4 84 ]
 "250
 } 0
 "10
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
-[v ___fladd@grs grs `uc  1 a 1 15 ]
+[v ___fladd@grs grs `uc  1 a 1 79 ]
 "15
-[v ___fladd@bexp bexp `uc  1 a 1 14 ]
+[v ___fladd@bexp bexp `uc  1 a 1 78 ]
 "16
-[v ___fladd@aexp aexp `uc  1 a 1 13 ]
+[v ___fladd@aexp aexp `uc  1 a 1 77 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 12 ]
+[v ___fladd@signs signs `uc  1 a 1 76 ]
 "10
-[v ___fladd@b b `d  1 p 4 0 ]
-[v ___fladd@a a `d  1 p 4 4 ]
+[v ___fladd@b b `d  1 p 4 64 ]
+[v ___fladd@a a `d  1 p 4 68 ]
 "237
 } 0
 "11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-[v ___fldiv@grs grs `ul  1 a 4 33 ]
+[v ___fldiv@grs grs `ul  1 a 4 58 ]
 "22
-[v ___fldiv@rem rem `ul  1 a 4 26 ]
+[v ___fldiv@rem rem `ul  1 a 4 51 ]
 "20
-[v ___fldiv@new_exp new_exp `s  1 a 2 31 ]
+[v ___fldiv@new_exp new_exp `s  1 a 2 56 ]
 "19
-[v ___fldiv@aexp aexp `uc  1 a 1 38 ]
+[v ___fldiv@aexp aexp `uc  1 a 1 63 ]
 "18
-[v ___fldiv@bexp bexp `uc  1 a 1 37 ]
+[v ___fldiv@bexp bexp `uc  1 a 1 62 ]
 "16
-[v ___fldiv@sign sign `uc  1 a 1 30 ]
+[v ___fldiv@sign sign `uc  1 a 1 55 ]
 "11
-[v ___fldiv@b b `d  1 p 4 14 ]
-[v ___fldiv@a a `d  1 p 4 18 ]
+[v ___fldiv@b b `d  1 p 4 39 ]
+[v ___fldiv@a a `d  1 p 4 43 ]
 "185
 } 0
-"123 C:\Users\alana\MPLABXProjects\Final.X\main.c
+"140 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _leerADC leerADC `(i  1 e 2 0 ]
 {
-"125
+"142
 [v leerADC@final final `i  1 a 2 16 ]
-"124
+"141
 [v leerADC@digital digital `i  1 a 2 14 ]
-"123
+"140
 [v leerADC@canal canal `i  1 p 2 8 ]
-"132
+"149
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -542,27 +583,34 @@
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S733 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S806 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S738 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S741 . 4 `l 1 i 4 0 `d 1 f 4 0 `S733 1 fAsBytes 4 0 `S738 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S741  1 a 4 25 ]
+[s S811 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S814 . 4 `l 1 i 4 0 `d 1 f 4 0 `S806 1 fAsBytes 4 0 `S811 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S814  1 a 4 33 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 19 ]
-[s S809 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 27 ]
+[s S882 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S812 . 2 `s 1 i 2 0 `us 1 n 2 0 `S809 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S812  1 a 2 29 ]
+[u S885 . 2 `s 1 i 2 0 `us 1 n 2 0 `S882 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S885  1 a 2 37 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 24 ]
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 23 ]
+[v ___flmul@aexp aexp `uc  1 a 1 31 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 18 ]
+[v ___flmul@sign sign `uc  1 a 1 26 ]
 "8
-[v ___flmul@b b `d  1 p 4 6 ]
-[v ___flmul@a a `d  1 p 4 10 ]
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
 "205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
+"19
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -581,13 +629,13 @@
 "94
 [v _LCD_Cadena LCD_Cadena `(v  1 e 1 0 ]
 {
-[v LCD_Cadena@dato dato `*.39Cuc  1 p 2 1 ]
+[v LCD_Cadena@dato dato `*.35Cuc  1 p 2 1 ]
 "100
 } 0
-"23 C:\Users\alana\MPLABXProjects\Final.X\main.c
+"27 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _P1 P1 `(v  1 e 1 0 ]
 {
-"50
+"54
 } 0
 "102 C:\Users\alana\MPLABXProjects\Final.X\LCD_lib.c
 [v _LCD_Data LCD_Data `(v  1 e 1 0 ]
