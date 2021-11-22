@@ -61,33 +61,45 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"5 C:\Users\alana\MPLABXProjects\Final.X\LCD_lib.c
-[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-"51
-[v _LCD_Comando LCD_Comando `(v  1 e 1 0 ]
-"85
-[v _LCD_XY LCD_XY `(v  1 e 1 0 ]
-"94
-[v _LCD_Cadena LCD_Cadena `(v  1 e 1 0 ]
-"102
-[v _LCD_Data LCD_Data `(v  1 e 1 0 ]
-"27 C:\Users\alana\MPLABXProjects\Final.X\main.c
-[v _P1 P1 `(v  1 e 1 0 ]
-"57
+"7 C:\Users\alana\MPLABXProjects\Final.X\LCD_lib.c
+[v _DelayFor18TCY DelayFor18TCY `(v  1 e 1 0 ]
+"24
+[v _DelayPORXLCD DelayPORXLCD `(v  1 e 1 0 ]
+"35
+[v _LCD_gotoXY LCD_gotoXY `(v  1 e 1 0 ]
+"43
+[v _LCD_WriteChr_CGRAM LCD_WriteChr_CGRAM `(v  1 e 1 0 ]
+"54
+[v _OpenXLCD OpenXLCD `(v  1 e 1 0 ]
+"118
+[v _putrsXLCD putrsXLCD `(v  1 e 1 0 ]
+"142
+[v _WriteCmdXLCD WriteCmdXLCD `(v  1 e 1 0 ]
+"232
+[v _SetCGRamAddr SetCGRamAddr `(v  1 e 1 0 ]
+"283
+[v _SetDDRamAddr SetDDRamAddr `(v  1 e 1 0 ]
+"375
+[v _WriteDataXLCD WriteDataXLCD `(v  1 e 1 0 ]
+"426
+[v _BusyXLCD BusyXLCD `(uc  1 e 1 0 ]
+"28 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _tocar_nota tocar_nota `(v  1 e 1 0 ]
-"82
+"53
 [v _silencio silencio `(v  1 e 1 0 ]
-"107
+"78
 [v _confT0 confT0 `(v  1 e 1 0 ]
-"133
+"104
 [v _confADC confADC `(v  1 e 1 0 ]
-"140
+"111
 [v _leerADC leerADC `(i  1 e 2 0 ]
-"160
+"131
 [v _cancion1 cancion1 `(i  1 e 2 0 ]
-"320
-[v _main main `(i  1 e 2 0 ]
-[s S150 . 1 `uc 1 RB0 1 0 :1:0 
+"336
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"346
+[v _main main `(v  1 e 1 0 ]
+[s S187 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -97,7 +109,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "2483 C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[s S159 . 1 `uc 1 INT0 1 0 :1:0 
+[s S196 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -105,14 +117,14 @@
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S167 . 1 `uc 1 . 1 0 :3:0 
+[s S204 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S170 . 1 `S150 1 . 1 0 `S159 1 . 1 0 `S167 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES170  1 e 1 @3969 ]
+[u S207 . 1 `S187 1 . 1 0 `S196 1 . 1 0 `S204 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES207  1 e 1 @3969 ]
 "2705
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
-[s S66 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S91 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -122,7 +134,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "3290
-[s S75 . 1 `uc 1 LD0 1 0 :1:0 
+[s S100 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -131,15 +143,15 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S84 . 1 `S66 1 . 1 0 `S75 1 . 1 0 ]
-[v _LATDbits LATDbits `VES84  1 e 1 @3980 ]
+[u S109 . 1 `S91 1 . 1 0 `S100 1 . 1 0 ]
+[v _LATDbits LATDbits `VES109  1 e 1 @3980 ]
 "3427
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "3625
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "4001
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S26 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S51 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -149,7 +161,7 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "4033
-[s S35 . 1 `uc 1 RD0 1 0 :1:0 
+[s S60 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -158,55 +170,55 @@
 `uc 1 RD6 1 0 :1:6 
 `uc 1 RD7 1 0 :1:7 
 ]
-[u S44 . 1 `S26 1 . 1 0 `S35 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES44  1 e 1 @3989 ]
+[u S69 . 1 `S51 1 . 1 0 `S60 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES69  1 e 1 @3989 ]
 "6510
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
 "6581
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "6666
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S330 . 1 `uc 1 . 1 0 :1:0 
+[s S367 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "6710
-[s S333 . 1 `uc 1 ADON 1 0 :1:0 
+[s S370 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S337 . 1 `uc 1 . 1 0 :1:0 
+[s S374 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S344 . 1 `uc 1 . 1 0 :1:0 
+[s S381 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S347 . 1 `uc 1 . 1 0 :1:0 
+[s S384 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S350 . 1 `uc 1 . 1 0 :1:0 
+[s S387 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S353 . 1 `uc 1 . 1 0 :1:0 
+[s S390 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S356 . 1 `uc 1 . 1 0 :1:0 
+[s S393 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S359 . 1 `S330 1 . 1 0 `S333 1 . 1 0 `S337 1 . 1 0 `S344 1 . 1 0 `S347 1 . 1 0 `S350 1 . 1 0 `S353 1 . 1 0 `S356 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES359  1 e 1 @4034 ]
+[u S396 . 1 `S367 1 . 1 0 `S370 1 . 1 0 `S374 1 . 1 0 `S381 1 . 1 0 `S384 1 . 1 0 `S387 1 . 1 0 `S390 1 . 1 0 `S393 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES396  1 e 1 @4034 ]
 "6792
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "6799
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-[s S271 . 1 `uc 1 . 1 0 :2:0 
+[s S308 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T1SYNC 1 0 :1:2 
 ]
 "7448
-[s S274 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S311 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -214,24 +226,24 @@
 `uc 1 T1RUN 1 0 :1:6 
 `uc 1 RD16 1 0 :1:7 
 ]
-[s S282 . 1 `uc 1 . 1 0 :2:0 
+[s S319 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[s S288 . 1 `uc 1 . 1 0 :3:0 
+[s S325 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SOSCEN 1 0 :1:3 
 `uc 1 . 1 0 :3:4 
 `uc 1 T1RD16 1 0 :1:7 
 ]
-[u S293 . 1 `S271 1 . 1 0 `S274 1 . 1 0 `S282 1 . 1 0 `S288 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES293  1 e 1 @4045 ]
+[u S330 . 1 `S308 1 . 1 0 `S311 1 . 1 0 `S319 1 . 1 0 `S325 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES330  1 e 1 @4045 ]
 "7525
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "7532
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-[s S245 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S282 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -239,15 +251,15 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "8089
-[s S252 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S289 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 ]
-[u S256 . 1 `S245 1 . 1 0 `S252 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES256  1 e 1 @4053 ]
+[u S293 . 1 `S282 1 . 1 0 `S289 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES293  1 e 1 @4053 ]
 "8139
 [v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
-[s S196 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S233 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -257,7 +269,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "8614
-[s S205 . 1 `uc 1 . 1 0 :1:0 
+[s S242 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -266,12 +278,12 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S214 . 1 `uc 1 . 1 0 :6:0 
+[s S251 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S218 . 1 `S196 1 . 1 0 `S205 1 . 1 0 `S214 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES218  1 e 1 @4082 ]
+[u S255 . 1 `S233 1 . 1 0 `S242 1 . 1 0 `S251 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES255  1 e 1 @4082 ]
 "8982
 [v _ADON ADON `VEb  1 e 0 @32272 ]
 "9753
@@ -284,68 +296,76 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"14 C:\Users\alana\MPLABXProjects\Final.X\main.c
+"13 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _buffer1 buffer1 `[23]uc  1 e 23 0 ]
-"16
+"15
 [v _puntos puntos `i  1 e 2 0 ]
-"17
+"16
 [v _vel vel `i  1 e 2 0 ]
-"18
+"17
 [v _contador contador `i  1 e 2 0 ]
-"19
+"18
 [v _tiempo2 tiempo2 `i  1 e 2 0 ]
-"20
+"19
 [v _k k `i  1 e 2 0 ]
-"21
+"20
 [v _f f `uc  1 e 1 0 ]
-"22
+"21
 [v _i i `i  1 e 2 0 ]
-"23
+"22
 [v _l l `i  1 e 2 0 ]
-"24
+"23
 [v _tiempo tiempo `f  1 e 4 0 ]
-"26
+"25
 [v _b b `i  1 e 2 0 ]
-"151
+"122
 [v _cancion cancion `[44][3]f  1 e 528 0 ]
+"311
+[v _personaje personaje `C[9]uc  1 e 9 0 ]
 "320
-[v _main main `(i  1 e 2 0 ]
+[v _personajeD personajeD `C[8]uc  1 e 8 0 ]
+"328
+[v _personajeI personajeI `C[8]uc  1 e 8 0 ]
+"346
+[v _main main `(v  1 e 1 0 ]
 {
-"370
+"349
+[v main@f f `i  1 a 2 21 ]
+"384
 } 0
-"107
+"78
 [v _confT0 confT0 `(v  1 e 1 0 ]
 {
-"119
+"90
 } 0
-"133
+"104
 [v _confADC confADC `(v  1 e 1 0 ]
 {
-"139
+"110
 } 0
-"160
+"131
 [v _cancion1 cancion1 `(i  1 e 2 0 ]
 {
-"163
-[v cancion1@j j `i  1 a 2 18 ]
-"316
+"134
+[v cancion1@j j `i  1 a 2 17 ]
+"310
 } 0
-"57
+"28
 [v _tocar_nota tocar_nota `(v  1 e 1 0 ]
 {
-"59
+"30
 [v tocar_nota@duracion2 duracion2 `i  1 a 2 10 ]
-"57
+"28
 [v tocar_nota@duracion duracion `i  1 p 2 0 ]
 [v tocar_nota@tfrec tfrec `f  1 p 4 2 ]
-"81
+"52
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S941 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S985 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S941  1 a 6 2 ]
+[v sprintf@f f `S985  1 a 6 2 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 0 ]
 "9
@@ -358,9 +378,9 @@
 {
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 85 ]
-[s S967 _IO_FILE 0 ]
+[s S1011 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S967  1 p 2 79 ]
+[v vfprintf@fp fp `*.39S1011  1 p 2 79 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 81 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 83 ]
 "1404
@@ -370,9 +390,9 @@
 {
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 71 ]
-[s S967 _IO_FILE 0 ]
+[s S1011 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S967  1 p 2 63 ]
+[v vfpfcnvrt@fp fp `*.39S1011  1 p 2 63 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 65 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
 "1387
@@ -387,9 +407,9 @@
 [v dtoa@s s `i  1 a 2 51 ]
 [v dtoa@w w `i  1 a 2 49 ]
 [v dtoa@p p `i  1 a 2 47 ]
-[s S967 _IO_FILE 0 ]
+[s S1011 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S967  1 p 2 27 ]
+[v dtoa@fp fp `*.39S1011  1 p 2 27 ]
 [v dtoa@d d `o  1 p 8 29 ]
 "328
 } 0
@@ -399,9 +419,9 @@
 "74
 [v pad@w w `i  1 a 2 25 ]
 [v pad@i i `i  1 a 2 23 ]
-[s S967 _IO_FILE 0 ]
+[s S1011 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S967  1 p 2 16 ]
+[v pad@fp fp `*.39S1011  1 p 2 16 ]
 [v pad@buf buf `*.39uc  1 p 2 18 ]
 [v pad@p p `i  1 p 2 20 ]
 "95
@@ -424,16 +444,16 @@
 [v fputs@c c `uc  1 a 1 13 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 9 ]
-[s S941 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S941  1 p 2 11 ]
+[s S985 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S985  1 p 2 11 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S941 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S941  1 p 2 2 ]
+[s S985 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S985  1 p 2 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
@@ -471,12 +491,12 @@
 [v ___aodiv@divisor divisor `o  1 p 8 8 ]
 "43
 } 0
-"82 C:\Users\alana\MPLABXProjects\Final.X\main.c
+"53 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _silencio silencio `(v  1 e 1 0 ]
 {
 [v silencio@duracion duracion `i  1 p 2 0 ]
 [v silencio@tfrec tfrec `f  1 p 4 2 ]
-"104
+"75
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -546,16 +566,22 @@
 [v ___fldiv@a a `d  1 p 4 43 ]
 "185
 } 0
-"140 C:\Users\alana\MPLABXProjects\Final.X\main.c
+"118 C:\Users\alana\MPLABXProjects\Final.X\LCD_lib.c
+[v _putrsXLCD putrsXLCD `(v  1 e 1 0 ]
+{
+[v putrsXLCD@buffer buffer `*.35Cuc  1 p 2 1 ]
+"127
+} 0
+"111 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _leerADC leerADC `(i  1 e 2 0 ]
 {
-"142
+"113
 [v leerADC@final final `i  1 a 2 16 ]
-"141
+"112
 [v leerADC@digital digital `i  1 a 2 14 ]
-"140
+"111
 [v leerADC@canal canal `i  1 p 2 8 ]
-"149
+"120
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -583,17 +609,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S806 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S850 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S811 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S814 . 4 `l 1 i 4 0 `d 1 f 4 0 `S806 1 fAsBytes 4 0 `S811 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S814  1 a 4 33 ]
+[s S855 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S858 . 4 `l 1 i 4 0 `d 1 f 4 0 `S850 1 fAsBytes 4 0 `S855 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S858  1 a 4 33 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 27 ]
-[s S882 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S926 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S885 . 2 `s 1 i 2 0 `us 1 n 2 0 `S882 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S885  1 a 2 37 ]
+[u S929 . 2 `s 1 i 2 0 `us 1 n 2 0 `S926 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S929  1 a 2 37 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -619,43 +645,83 @@
 [v ___fleq@ff2 ff2 `d  1 p 4 10 ]
 "12
 } 0
-"85 C:\Users\alana\MPLABXProjects\Final.X\LCD_lib.c
-[v _LCD_XY LCD_XY `(v  1 e 1 0 ]
+"35 C:\Users\alana\MPLABXProjects\Final.X\LCD_lib.c
+[v _LCD_gotoXY LCD_gotoXY `(v  1 e 1 0 ]
 {
-[v LCD_XY@x x `i  1 p 2 18 ]
-[v LCD_XY@y y `i  1 p 2 20 ]
-"92
+[v LCD_gotoXY@x x `i  1 p 2 18 ]
+[v LCD_gotoXY@y y `i  1 p 2 20 ]
+"40
 } 0
-"94
-[v _LCD_Cadena LCD_Cadena `(v  1 e 1 0 ]
+"43
+[v _LCD_WriteChr_CGRAM LCD_WriteChr_CGRAM `(v  1 e 1 0 ]
 {
-[v LCD_Cadena@dato dato `*.35Cuc  1 p 2 1 ]
-"100
+"44
+[v LCD_WriteChr_CGRAM@i i `uc  1 a 1 7 ]
+"43
+[v LCD_WriteChr_CGRAM@buffer buffer `*.25Cuc  1 p 2 4 ]
+[v LCD_WriteChr_CGRAM@Addres Addres `uc  1 p 1 6 ]
+"51
 } 0
-"27 C:\Users\alana\MPLABXProjects\Final.X\main.c
-[v _P1 P1 `(v  1 e 1 0 ]
+"375
+[v _WriteDataXLCD WriteDataXLCD `(v  1 e 1 0 ]
 {
-"54
+[v WriteDataXLCD@data data `uc  1 a 1 wreg ]
+[v WriteDataXLCD@data data `uc  1 a 1 wreg ]
+[v WriteDataXLCD@data data `uc  1 a 1 0 ]
+"423
 } 0
-"102 C:\Users\alana\MPLABXProjects\Final.X\LCD_lib.c
-[v _LCD_Data LCD_Data `(v  1 e 1 0 ]
+"232
+[v _SetCGRamAddr SetCGRamAddr `(v  1 e 1 0 ]
 {
-[v LCD_Data@data data `uc  1 a 1 wreg ]
-[v LCD_Data@data data `uc  1 a 1 wreg ]
-[v LCD_Data@data data `uc  1 a 1 0 ]
-"128
+[v SetCGRamAddr@CGaddr CGaddr `uc  1 a 1 wreg ]
+[v SetCGRamAddr@CGaddr CGaddr `uc  1 a 1 wreg ]
+[v SetCGRamAddr@CGaddr CGaddr `uc  1 a 1 3 ]
+"280
 } 0
-"5
+"336 C:\Users\alana\MPLABXProjects\Final.X\main.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 {
-"49
+"341
 } 0
-"51
-[v _LCD_Comando LCD_Comando `(v  1 e 1 0 ]
+"54 C:\Users\alana\MPLABXProjects\Final.X\LCD_lib.c
+[v _OpenXLCD OpenXLCD `(v  1 e 1 0 ]
 {
-[v LCD_Comando@cmd cmd `uc  1 a 1 wreg ]
-[v LCD_Comando@cmd cmd `uc  1 a 1 wreg ]
-"53
-[v LCD_Comando@cmd cmd `uc  1 a 1 0 ]
-"83
+[v OpenXLCD@lcdtype lcdtype `uc  1 a 1 wreg ]
+[v OpenXLCD@lcdtype lcdtype `uc  1 a 1 wreg ]
+"66
+[v OpenXLCD@lcdtype lcdtype `uc  1 a 1 4 ]
+"115
+} 0
+"142
+[v _WriteCmdXLCD WriteCmdXLCD `(v  1 e 1 0 ]
+{
+[v WriteCmdXLCD@cmd cmd `uc  1 a 1 wreg ]
+[v WriteCmdXLCD@cmd cmd `uc  1 a 1 wreg ]
+"161
+[v WriteCmdXLCD@cmd cmd `uc  1 a 1 0 ]
+"189
+} 0
+"283
+[v _SetDDRamAddr SetDDRamAddr `(v  1 e 1 0 ]
+{
+[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
+[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
+"302
+[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 3 ]
+"330
+} 0
+"24
+[v _DelayPORXLCD DelayPORXLCD `(v  1 e 1 0 ]
+{
+"27
+} 0
+"426
+[v _BusyXLCD BusyXLCD `(uc  1 e 1 0 ]
+{
+"472
+} 0
+"7
+[v _DelayFor18TCY DelayFor18TCY `(v  1 e 1 0 ]
+{
+"21
 } 0

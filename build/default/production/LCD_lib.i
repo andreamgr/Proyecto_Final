@@ -5626,139 +5626,510 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "LCD_lib.c" 2
 
 # 1 "./LCD_lib.h" 1
-# 17 "./LCD_lib.h"
-void LCD_Init(void);
-void LCD_Comando(unsigned char cmd);
-void LCD_XY(int x,int y);
-void LCD_Cadena(const char *);
-void LCD_Data(char);
+
+
+# 1 "C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\p18cxxx.h" 1 3
+# 3 "./LCD_lib.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
+# 4 "./LCD_lib.h" 2
+# 94 "./LCD_lib.h"
+void OpenXLCD( unsigned char);
+
+
+
+
+void SetCGRamAddr( unsigned char);
+
+
+
+
+void SetDDRamAddr( unsigned char);
+
+
+
+
+unsigned char BusyXLCD(void);
+
+
+
+
+unsigned char ReadAddrXLCD(void);
+
+
+
+
+char ReadDataXLCD(void);
+
+
+
+
+void WriteCmdXLCD( unsigned char);
+
+
+
+
+void WriteDataXLCD( char);
+# 139 "./LCD_lib.h"
+void putsXLCD( char *);
+
+
+
+
+void putrsXLCD(const char *);
+
+
+extern void DelayFor18TCY(void);
+extern void DelayPORXLCD(void);
+extern void DelayXLCD(void);
+
+void LCD_gotoXY(int x,int y);
+void LCD_WriteChr_CGRAM( const char *buffer, unsigned char Addres);
 # 2 "LCD_lib.c" 2
 
 # 1 "./conf.h" 1
 # 3 "LCD_lib.c" 2
 
 
-void LCD_Init(void){
-
-    PORTD = PORTD & 0xf0;
 
 
+void DelayFor18TCY(void){
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    return;
+}
 
 
-    TRISD &= 0xf0;
-
-    TRISDbits.RD6 = 0;
-    TRISDbits.RD5 = 0;
-    TRISDbits.RD4 = 0;
-
-    LATDbits.LATD6 = 0;
-    LATDbits.LATD5 = 0;
-    LATDbits.LATD4 = 0;
-
+void DelayPORXLCD(void){
     _delay((unsigned long)((15)*(20000000/4000.0)));
+    return;
+}
 
-    LCD_Comando(0x30);
+
+void DelayXLCD(void){
     _delay((unsigned long)((5)*(20000000/4000.0)));
-    LCD_Comando(0x30);
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-    LCD_Comando(0x32);
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-
-
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-    LCD_Comando(0x28);
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-    LCD_Comando(0x08);
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-    LCD_Comando(0x0f);
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-    LCD_Comando(0x01);
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-    LCD_Comando(0x04);
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-    LCD_Comando(0x06);
-    LCD_Comando(0x0C);
-    return;
-
-}
-
-void LCD_Comando(unsigned char cmd){
-
-    PORTD &= 0xf0;
-    TRISD &= 0xf0;
-
-
-    PORTD = PORTD | ((cmd>>4)&0x0f);
-
-
-
-
-
-
-
-    LATDbits.LATD6 = 0;
-    LATDbits.LATD5 = 0;
-    _delay((unsigned long)((5)*(20000000/4000000.0)));
-    LATDbits.LATD4 = 1;
-    _delay((unsigned long)((5)*(20000000/4000000.0)));
-    LATDbits.LATD4 = 0;
-
-
-    PORTD &= 0xf0;
-    PORTD |= cmd&0x0f;
-    _delay((unsigned long)((5)*(20000000/4000000.0)));
-    LATDbits.LATD4 = 1;
-    _delay((unsigned long)((5)*(20000000/4000000.0)));
-    LATDbits.LATD4 = 0;
-
-    TRISD |= 0x0f;
-
     return;
 }
 
-void LCD_XY(int x,int y){
-    if(x>0){
-        LCD_Comando(0xC0+y);
-    }
-    else{
-        LCD_Comando(0x80+y);
-    }
-}
-
-void LCD_Cadena(const char *dato){
-    while(*dato){
-        _delay((unsigned long)((100)*(20000000/4000000.0)));
-        LCD_Data(*dato);
-        dato++;
-    }
-}
-
-void LCD_Data(char data){
-    _delay((unsigned long)((100)*(20000000/4000000.0)));
-    PORTD &= 0xf0;
-    TRISD &= 0xf0;
-
-    PORTD = PORTD | ((data>>4)&0x0f);
-
-    LATDbits.LATD6 = 0;
-    LATDbits.LATD5 = 1;
-    _delay((unsigned long)((5)*(20000000/4000000.0)));
-    LATDbits.LATD4 = 1;
-    _delay((unsigned long)((5)*(20000000/4000000.0)));
-    LATDbits.LATD4 = 0;
-
-    PORTD &= 0xf0;
-    PORTD |= data&0x0f;
-
-    _delay((unsigned long)((5)*(20000000/4000000.0)));
-    LATDbits.LATD4 = 1;
-    _delay((unsigned long)((5)*(20000000/4000000.0)));
-    LATDbits.LATD4 = 0;
-
-    TRISD |= 0x0f;
-
+void LCD_gotoXY(int x,int y)
+{
+    if ( x>0 ){WriteCmdXLCD(0b11000000 +y);}
+    else {WriteCmdXLCD(0b10000000 +y);}
     return;
+}
+
+
+void LCD_WriteChr_CGRAM( const char *buffer, unsigned char Addres)
+{ unsigned char i=0;
+
+    SetCGRamAddr(Addres*8);
+    for (i=0;i<8;i++)
+    { WriteDataXLCD(*buffer);
+       ++buffer;
+    }
+}
+
+
+void OpenXLCD(unsigned char lcdtype)
+{
+# 66 "LCD_lib.c"
+        PORTD &= 0xf0;
+        TRISD &= 0xF0;
+
+
+        TRISDbits.TRISD6 = 0;
+        TRISDbits.TRISD5 = 0;
+        TRISDbits.TRISD4 = 0;
+        LATDbits.LATD6 = 0;
+        LATDbits.LATD5 = 0;
+        LATDbits.LATD4 = 0;
+
+
+        DelayPORXLCD();
+
+   WriteCmdXLCD(0x30);
+         _delay((unsigned long)((1)*(20000000/4000000.0)));
+
+   WriteCmdXLCD(0x30);
+   _delay((unsigned long)((1)*(20000000/4000000.0)));
+
+
+   WriteCmdXLCD(0x32);
+  while( BusyXLCD() );
+
+
+
+
+        while(BusyXLCD());
+        WriteCmdXLCD(lcdtype);
+
+
+        while(BusyXLCD());
+        WriteCmdXLCD(0b00001011&0b00001101&0b00001110);
+        while(BusyXLCD());
+        WriteCmdXLCD(0b00001111&0b00001111&0b00001111);
+
+
+        while(BusyXLCD());
+        WriteCmdXLCD(0x01);
+
+
+        while(BusyXLCD());
+        WriteCmdXLCD(0b00000100);
+
+
+        while(BusyXLCD());
+        SetDDRamAddr(0x80);
+
+        return;
+}
+
+
+void putrsXLCD(const char *buffer)
+{
+        while(*buffer)
+        {
+                while(BusyXLCD());
+                WriteDataXLCD(*buffer);
+                buffer++;
+        }
+        return;
+}
+
+
+void putsXLCD(char *buffer)
+{
+        while(*buffer)
+        {
+                while(BusyXLCD());
+                WriteDataXLCD(*buffer);
+                buffer++;
+        }
+        return;
+}
+
+
+void WriteCmdXLCD(unsigned char cmd)
+{
+# 161 "LCD_lib.c"
+        TRISD &= 0xf0;
+        PORTD &= 0xf0;
+        PORTD |= (cmd>>4)&0x0f;
+
+        LATDbits.LATD6 = 0;
+        LATDbits.LATD5 = 0;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 0;
+
+
+
+
+        PORTD &= 0xf0;
+        PORTD |= cmd&0x0f;
+
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 0;
+
+
+
+        TRISD |= 0x0f;
+
+
+        return;
+}
+
+
+unsigned char ReadAddrXLCD(void)
+{
+        char data;
+# 206 "LCD_lib.c"
+        LATDbits.LATD6 = 1;
+        LATDbits.LATD5 = 0;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+
+
+
+        data = (PORTD<<4)&0xf0;
+
+        LATDbits.LATD4 = 0;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+
+
+
+        data |= PORTD&0x0f;
+
+        LATDbits.LATD4 = 0;
+        LATDbits.LATD6 = 0;
+
+        return (data&0x7f);
+}
+
+
+void SetCGRamAddr(unsigned char CGaddr)
+{
+        while(BusyXLCD());
+# 252 "LCD_lib.c"
+        TRISD &= 0xf0;
+        PORTD &= 0xf0;
+        PORTD |= (((CGaddr |0b01000000)>>4) & 0x0f);
+
+        LATDbits.LATD6 = 0;
+        LATDbits.LATD5 = 0;
+        _delay((unsigned long)((1)*(20000000/4000000.0)));
+        LATDbits.LATD4 = 1;
+        _delay((unsigned long)((1)*(20000000/4000000.0)));
+        LATDbits.LATD4 = 0;
+
+
+
+
+        PORTD &= 0xf0;
+        PORTD |= (CGaddr&0x0f);
+
+        _delay((unsigned long)((1)*(20000000/4000000.0)));
+        LATDbits.LATD4 = 1;
+        _delay((unsigned long)((1)*(20000000/4000000.0)));
+        LATDbits.LATD4 = 0;
+
+
+
+        TRISD |= 0x0f;
+
+
+        return;
+}
+
+
+void SetDDRamAddr(unsigned char DDaddr)
+{
+# 302 "LCD_lib.c"
+        TRISD &= 0xf0;
+        PORTD &= 0xf0;
+        PORTD |= (((DDaddr | 0b10000000)>>4) & 0x0f);
+
+        LATDbits.LATD6 = 0;
+        LATDbits.LATD5 = 0;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 0;
+
+
+
+
+        PORTD &= 0xf0;
+        PORTD |= (DDaddr&0x0f);
+
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 0;
+
+
+
+        TRISD |= 0x0f;
+
+
+        return;
+}
+
+
+char ReadDataXLCD(void)
+{
+        char data;
+# 348 "LCD_lib.c"
+        LATDbits.LATD6 = 1;
+        LATDbits.LATD5 = 1;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+
+
+
+        data = (PORTD<<4)&0xf0;
+
+        LATDbits.LATD4 = 0;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+
+
+
+        data |= PORTD&0x0f;
+
+        LATDbits.LATD4 = 0;
+        LATDbits.LATD5 = 0;
+        LATDbits.LATD6 = 0;
+
+        return(data);
+}
+
+
+void WriteDataXLCD(char data)
+{
+        while(BusyXLCD());
+# 395 "LCD_lib.c"
+        TRISD &= 0xf0;
+        PORTD &= 0xf0;
+        PORTD |= ((data>>4)&0x0f);
+
+        LATDbits.LATD5 = 1;
+        LATDbits.LATD6 = 0;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 0;
+
+
+
+
+        PORTD &= 0xf0;
+        PORTD |= (data&0x0f);
+
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 0;
+
+
+
+        TRISD |= 0x0f;
+
+
+        return;
+}
+
+
+unsigned char BusyXLCD(void)
+{
+        LATDbits.LATD6 = 1;
+        LATDbits.LATD5 = 0;
+        DelayFor18TCY();
+        LATDbits.LATD4 = 1;
+        DelayFor18TCY();
+# 450 "LCD_lib.c"
+        if(PORTD&0x08)
+
+        {
+                LATDbits.LATD4 = 0;
+                DelayFor18TCY();
+                LATDbits.LATD4 = 1;
+                DelayFor18TCY();
+                LATDbits.LATD4 = 0;
+                LATDbits.LATD6 = 0;
+                return 1;
+        }
+        else
+        {
+                LATDbits.LATD4 = 0;
+                DelayFor18TCY();
+                LATDbits.LATD4 = 1;
+                DelayFor18TCY();
+                LATDbits.LATD4 = 0;
+                LATDbits.LATD6 = 0;
+                return 0;
+        }
 
 }

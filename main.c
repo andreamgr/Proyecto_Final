@@ -8,10 +8,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <xc.h>
-#include "LCD_lib.h"
 #include "conf.h"
-
-    char buffer1[23];
+#include "LCD_lib.h"
+  char buffer1[23];
     char buffer[20];
     int puntos = 0;
     int vel;
@@ -22,39 +21,11 @@
    int i = 0;
    int l = 15;
    float tiempo = 0;
+
+   int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
    
-int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
-    void P1(){    
-    LCD_Comando(1);
-    LCD_Comando(0b01000000);//pagina 27  HD44780    
-    LCD_Data(0b00011111);
-    LCD_Data(0b00010101);
-    LCD_Data(0b00011111);
-    LCD_Data(0b00001110);
-    LCD_Data(0b00010101);
-    LCD_Data(0b00001110);
-    LCD_Data(0b00011011);
-    LCD_Data(0b00000000);
-    LCD_Data(0b00000111);
-    LCD_Data(0b00000010);
-    LCD_Data(0b00011111);
-    LCD_Data(0b00000111);
-    LCD_Data(0b00000111);
-    LCD_Data(0b00000101);
-    LCD_Data(0b00011011);
-    LCD_Data(0b00000000);
-    LCD_Data(0b00011100);
-    LCD_Data(0b00001000);
-    LCD_Data(0b00011111);
-    LCD_Data(0b00011100);
-    LCD_Data(0b00011100);
-    LCD_Data(0b00010100);
-    LCD_Data(0b00011011);
-    LCD_Data(0b00000000);
-    }
-
-
- void tocar_nota(int duracion, float tfrec){  //funcion generadora de notas, periodo de la nota y duracion de esta
+   
+    void tocar_nota(int duracion, float tfrec){  //funcion generadora de notas, periodo de la nota y duracion de esta
  
      int duracion2;
      duracion2 = (int)duracion/tfrec;
@@ -166,14 +137,20 @@ if(i < 15 && l >= 0 && f == 0){
      // 0 - 14--15 & 15 - 1--0
 
                         if(cancion[j][2] == 1){
-                            LCD_XY(1,12);
+                            
+                            WriteCmdXLCD(BORRAR_LCD);
+                            __delay_ms(1);
+                           LCD_gotoXY(k,leerADC(0));
+                            putcXLCD(0);
+                            __delay_ms(1);    
+                            LCD_gotoXY(1,l);
+                            putcXLCD(3);
+                            __delay_ms(1); 
+                            LCD_gotoXY(1,12);
                             sprintf(buffer1,"%i",puntos);  //Texto alineado a la izquierda
-                             LCD_Cadena(buffer1);
-                                LCD_XY(k,leerADC(0));
-                                LCD_Data(0);
-                                LCD_XY(1,l);
-                                LCD_Data(1);
-                                 if(leerADC(0) == l){
+                             putrsXLCD(buffer1);                          
+
+                                 if(leerADC(0) == l && k == 1){
                                    puntos = puntos - contador;
                                }
                          tocar_nota(vel*cancion[j][0],cancion[j][1]);
@@ -194,14 +171,19 @@ if(i < 15 && l >= 0 && f == 0){
                      }
 
                      else if(cancion[j][2] == 0){
-                LCD_XY(1,12);
-                sprintf(buffer1,"%i",puntos);  //Texto alineado a la izquierda
-                             LCD_Cadena(buffer1);
-                                LCD_XY(k,leerADC(0));
-                                LCD_Data(0);
-                                LCD_XY(1,l);
-                                LCD_Data(1); 
-                                if(leerADC(0) == l){
+                            WriteCmdXLCD(BORRAR_LCD);
+                            __delay_ms(1);
+                           LCD_gotoXY(k,leerADC(0));
+                            putcXLCD(0);
+                            __delay_ms(1);    
+                            LCD_gotoXY(1,l);
+                            putcXLCD(3);
+                            __delay_ms(1); 
+                            LCD_gotoXY(1,12);
+                            sprintf(buffer1,"%i",puntos);  //Texto alineado a la izquierda
+                             putrsXLCD(buffer1);  
+                             
+                                if(leerADC(0) == l && k == 1){
                                    puntos = puntos - contador;
                                } 
                   silencio(vel*cancion[j][0],cancion[j][1]);
@@ -221,7 +203,8 @@ if(i < 15 && l >= 0 && f == 0){
                   
 
                      }
-            LCD_Comando(1);
+                            WriteCmdXLCD(BORRAR_LCD);
+                            __delay_ms(1);
             i++;
             l--;
          f = 0;
@@ -236,14 +219,19 @@ if(i < 15 && l >= 0 && f == 0){
 else if(i >= 0 &&  l < 15 && f == 1 ){
        // 14-0 &  1-15
                       if(cancion[j][2] == 1){
-                                        LCD_XY(1,12);
+                             WriteCmdXLCD(BORRAR_LCD);
+                            __delay_ms(1);
+                           LCD_gotoXY(k,leerADC(0));
+                            putcXLCD(0);
+                            __delay_ms(1);    
+                            LCD_gotoXY(1,l);
+                            putcXLCD(1);
+                            __delay_ms(1); 
+                            LCD_gotoXY(1,12);
                             sprintf(buffer1,"%i",puntos);  //Texto alineado a la izquierda
-                             LCD_Cadena(buffer1);
-                                LCD_XY(k,leerADC(0));
-                                LCD_Data(0);
-                                LCD_XY(1,l);
-                                LCD_Data(2);
-                                                               if(leerADC(0) == l){
+                             putrsXLCD(buffer1);  
+                                
+                                if(leerADC(0) == l && k == 1){
                                    puntos = puntos - contador;
                                } 
                             tocar_nota(vel*cancion[j][0],cancion[j][1]);
@@ -266,14 +254,19 @@ else if(i >= 0 &&  l < 15 && f == 1 ){
                      }
 
                      else if(cancion[j][2] == 0){
-                                          LCD_XY(1,12);
+                        WriteCmdXLCD(BORRAR_LCD);
+                            __delay_ms(1);
+                           LCD_gotoXY(k,leerADC(0));
+                            putcXLCD(0);
+                            __delay_ms(1);    
+                            LCD_gotoXY(1,l);
+                            putcXLCD(1);
+                            __delay_ms(1); 
+                            LCD_gotoXY(1,12);
                             sprintf(buffer1,"%i",puntos);  //Texto alineado a la izquierda
-                             LCD_Cadena(buffer1);
-                                LCD_XY(k,leerADC(0));
-                                LCD_Data(0);
-                                LCD_XY(1,l);
-                                LCD_Data(2);
-                               if(leerADC(0) == l){
+                             putrsXLCD(buffer1);  
+                                
+                               if(leerADC(0) == l && k == 1){
                                    puntos = puntos - contador;
                                } 
                                 
@@ -297,7 +290,8 @@ else if(i >= 0 &&  l < 15 && f == 1 ){
 
 
                      }
-            LCD_Comando(1);
+              WriteCmdXLCD(BORRAR_LCD);
+                            __delay_ms(1);
             i--;
             l++;
             f = 1;
@@ -314,57 +308,63 @@ else if(i >= 0 &&  l < 15 && f == 1 ){
 
 return 2;
  }
+const char personaje[]={    0b00011111,
+                            0b00010101,
+                            0b00011111,
+                            0b00001110,
+                            0b00010101,
+                            0b00001110,
+                            0b00011011,
+                            0b00000000,0};
+
+const char personajeD[]={    0b00011100,
+                            0b00001000,
+                            0b00011111,
+                            0b00011100,
+                            0b00011100,
+                            0b00010100,
+                            0b00011011,0};
+//Pokeball
+const char personajeI[]={0b00000111,
+                        0b00000010,
+                        0b00011111,
+                        0b00000111,
+                        0b00000111,
+                        0b00000101,
+                        0b00011011,0};
+
+void LCD_Init(void){
+  OpenXLCD(FOUR_BIT & LINES_5X7 );
+    while(BusyXLCD()); // LCD esta ocupado
+    WriteCmdXLCD(0x06); //Mover el cursor a la derecha
+    WriteCmdXLCD(0x0C); //Desactivar el cursor
+}
 
 
- 
-int main(int argc, char** argv) {
- 
+
+
+void main(void) {
      ADCON1= 15;
      int i = 1;
-             LCD_Init();
-             P1();
+     int f = 0;
        confT0();
        confADC();    
              
     TRISA =  0b00010001;
     TRISB = 0b11111101;
      vel = 2000;
-    
-    while(1){
-     if(PORTBbits.RB0 == 1){
-        if(cancion1() == 2 ){
-        LCD_XY(0,0);
-        LCD_Cadena("!Has perdido! ");
-        LCD_XY(1,0);
-        LCD_Cadena("!Presionar boton ");
-        if(PORTBbits.RB0 == 1){
-            break;
-        }
-        }
-   }
-     else{
-                 LCD_XY(1,0);
-        LCD_Cadena("!Presionar boton ");
-                                if(PORTBbits.RB0 == 1){
-                            LCD_Comando(1);
-                            cancion1();
-        }
-     }
+    /**/
+    LCD_Init();
+   
+        WriteCmdXLCD(BORRAR_LCD);
+        LCD_WriteChr_CGRAM(personaje,0);
+        LCD_WriteChr_CGRAM(personajeD,1);
+        LCD_WriteChr_CGRAM(personajeI,3);
+        __delay_ms(500);
+        
+        while(1){
+                cancion1();
 
- 
-    
-    
-    
-    
-    }
- 	
- 
- 
-     
-
-    return (EXIT_SUCCESS);
-    
-    
-    
+        }
     
 }

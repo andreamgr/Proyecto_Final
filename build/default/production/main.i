@@ -5763,20 +5763,156 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
 # 10 "main.c" 2
 
-# 1 "./LCD_lib.h" 1
-# 17 "./LCD_lib.h"
-void LCD_Init(void);
-void LCD_Comando(unsigned char cmd);
-void LCD_XY(int x,int y);
-void LCD_Cadena(const char *);
-void LCD_Data(char);
+# 1 "./conf.h" 1
 # 11 "main.c" 2
 
-# 1 "./conf.h" 1
+# 1 "./LCD_lib.h" 1
+
+
+# 1 "C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\p18cxxx.h" 1 3
+# 3 "./LCD_lib.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
+# 4 "./LCD_lib.h" 2
+# 94 "./LCD_lib.h"
+void OpenXLCD( unsigned char);
+
+
+
+
+void SetCGRamAddr( unsigned char);
+
+
+
+
+void SetDDRamAddr( unsigned char);
+
+
+
+
+unsigned char BusyXLCD(void);
+
+
+
+
+unsigned char ReadAddrXLCD(void);
+
+
+
+
+char ReadDataXLCD(void);
+
+
+
+
+void WriteCmdXLCD( unsigned char);
+
+
+
+
+void WriteDataXLCD( char);
+# 139 "./LCD_lib.h"
+void putsXLCD( char *);
+
+
+
+
+void putrsXLCD(const char *);
+
+
+extern void DelayFor18TCY(void);
+extern void DelayPORXLCD(void);
+extern void DelayXLCD(void);
+
+void LCD_gotoXY(int x,int y);
+void LCD_WriteChr_CGRAM( const char *buffer, unsigned char Addres);
 # 12 "main.c" 2
 
-
-    char buffer1[23];
+  char buffer1[23];
     char buffer[20];
     int puntos = 0;
     int vel;
@@ -5788,38 +5924,10 @@ void LCD_Data(char);
    int l = 15;
    float tiempo = 0;
 
-int a,b,s;
-    void P1(){
-    LCD_Comando(1);
-    LCD_Comando(0b01000000);
-    LCD_Data(0b00011111);
-    LCD_Data(0b00010101);
-    LCD_Data(0b00011111);
-    LCD_Data(0b00001110);
-    LCD_Data(0b00010101);
-    LCD_Data(0b00001110);
-    LCD_Data(0b00011011);
-    LCD_Data(0b00000000);
-    LCD_Data(0b00000111);
-    LCD_Data(0b00000010);
-    LCD_Data(0b00011111);
-    LCD_Data(0b00000111);
-    LCD_Data(0b00000111);
-    LCD_Data(0b00000101);
-    LCD_Data(0b00011011);
-    LCD_Data(0b00000000);
-    LCD_Data(0b00011100);
-    LCD_Data(0b00001000);
-    LCD_Data(0b00011111);
-    LCD_Data(0b00011100);
-    LCD_Data(0b00011100);
-    LCD_Data(0b00010100);
-    LCD_Data(0b00011011);
-    LCD_Data(0b00000000);
-    }
+   int a,b,s;
 
 
- void tocar_nota(int duracion, float tfrec){
+    void tocar_nota(int duracion, float tfrec){
 
      int duracion2;
      duracion2 = (int)duracion/tfrec;
@@ -5931,14 +6039,20 @@ if(i < 15 && l >= 0 && f == 0){
 
 
                         if(cancion[j][2] == 1){
-                            LCD_XY(1,12);
+
+                            WriteCmdXLCD(0x01);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                           LCD_gotoXY(k,leerADC(0));
+                            WriteDataXLCD(0);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                            LCD_gotoXY(1,l);
+                            WriteDataXLCD(3);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                            LCD_gotoXY(1,12);
                             sprintf(buffer1,"%i",puntos);
-                             LCD_Cadena(buffer1);
-                                LCD_XY(k,leerADC(0));
-                                LCD_Data(0);
-                                LCD_XY(1,l);
-                                LCD_Data(1);
-                                 if(leerADC(0) == l){
+                             putrsXLCD(buffer1);
+
+                                 if(leerADC(0) == l && k == 1){
                                    puntos = puntos - contador;
                                }
                          tocar_nota(vel*cancion[j][0],cancion[j][1]);
@@ -5959,14 +6073,19 @@ if(i < 15 && l >= 0 && f == 0){
                      }
 
                      else if(cancion[j][2] == 0){
-                LCD_XY(1,12);
-                sprintf(buffer1,"%i",puntos);
-                             LCD_Cadena(buffer1);
-                                LCD_XY(k,leerADC(0));
-                                LCD_Data(0);
-                                LCD_XY(1,l);
-                                LCD_Data(1);
-                                if(leerADC(0) == l){
+                            WriteCmdXLCD(0x01);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                           LCD_gotoXY(k,leerADC(0));
+                            WriteDataXLCD(0);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                            LCD_gotoXY(1,l);
+                            WriteDataXLCD(3);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                            LCD_gotoXY(1,12);
+                            sprintf(buffer1,"%i",puntos);
+                             putrsXLCD(buffer1);
+
+                                if(leerADC(0) == l && k == 1){
                                    puntos = puntos - contador;
                                }
                   silencio(vel*cancion[j][0],cancion[j][1]);
@@ -5986,7 +6105,8 @@ if(i < 15 && l >= 0 && f == 0){
 
 
                      }
-            LCD_Comando(1);
+                            WriteCmdXLCD(0x01);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
             i++;
             l--;
          f = 0;
@@ -6001,14 +6121,19 @@ if(i < 15 && l >= 0 && f == 0){
 else if(i >= 0 && l < 15 && f == 1 ){
 
                       if(cancion[j][2] == 1){
-                                        LCD_XY(1,12);
+                             WriteCmdXLCD(0x01);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                           LCD_gotoXY(k,leerADC(0));
+                            WriteDataXLCD(0);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                            LCD_gotoXY(1,l);
+                            WriteDataXLCD(1);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                            LCD_gotoXY(1,12);
                             sprintf(buffer1,"%i",puntos);
-                             LCD_Cadena(buffer1);
-                                LCD_XY(k,leerADC(0));
-                                LCD_Data(0);
-                                LCD_XY(1,l);
-                                LCD_Data(2);
-                                                               if(leerADC(0) == l){
+                             putrsXLCD(buffer1);
+
+                                if(leerADC(0) == l && k == 1){
                                    puntos = puntos - contador;
                                }
                             tocar_nota(vel*cancion[j][0],cancion[j][1]);
@@ -6031,14 +6156,19 @@ else if(i >= 0 && l < 15 && f == 1 ){
                      }
 
                      else if(cancion[j][2] == 0){
-                                          LCD_XY(1,12);
+                        WriteCmdXLCD(0x01);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                           LCD_gotoXY(k,leerADC(0));
+                            WriteDataXLCD(0);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                            LCD_gotoXY(1,l);
+                            WriteDataXLCD(1);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
+                            LCD_gotoXY(1,12);
                             sprintf(buffer1,"%i",puntos);
-                             LCD_Cadena(buffer1);
-                                LCD_XY(k,leerADC(0));
-                                LCD_Data(0);
-                                LCD_XY(1,l);
-                                LCD_Data(2);
-                               if(leerADC(0) == l){
+                             putrsXLCD(buffer1);
+
+                               if(leerADC(0) == l && k == 1){
                                    puntos = puntos - contador;
                                }
 
@@ -6062,7 +6192,8 @@ else if(i >= 0 && l < 15 && f == 1 ){
 
 
                      }
-            LCD_Comando(1);
+              WriteCmdXLCD(0x01);
+                            _delay((unsigned long)((1)*(20000000/4000.0)));
             i--;
             l++;
             f = 1;
@@ -6079,15 +6210,45 @@ else if(i >= 0 && l < 15 && f == 1 ){
 
 return 2;
  }
+const char personaje[]={ 0b00011111,
+                            0b00010101,
+                            0b00011111,
+                            0b00001110,
+                            0b00010101,
+                            0b00001110,
+                            0b00011011,
+                            0b00000000,0};
+
+const char personajeD[]={ 0b00011100,
+                            0b00001000,
+                            0b00011111,
+                            0b00011100,
+                            0b00011100,
+                            0b00010100,
+                            0b00011011,0};
+
+const char personajeI[]={0b00000111,
+                        0b00000010,
+                        0b00011111,
+                        0b00000111,
+                        0b00000111,
+                        0b00000101,
+                        0b00011011,0};
+
+void LCD_Init(void){
+  OpenXLCD(0b00101100 & 0b00111000 );
+    while(BusyXLCD());
+    WriteCmdXLCD(0x06);
+    WriteCmdXLCD(0x0C);
+}
 
 
 
-int main(int argc, char** argv) {
 
+void main(void) {
      ADCON1= 15;
      int i = 1;
-             LCD_Init();
-             P1();
+     int f = 0;
        confT0();
        confADC();
 
@@ -6095,41 +6256,31 @@ int main(int argc, char** argv) {
     TRISB = 0b11111101;
      vel = 2000;
 
-    while(1){
-     if(PORTBbits.RB0 == 1){
-        if(cancion1() == 2 ){
-        LCD_XY(0,0);
-        LCD_Cadena("!Has perdido! ");
-        LCD_XY(1,0);
-        LCD_Cadena("!Presionar boton ");
-        if(PORTBbits.RB0 == 1){
-            break;
+    LCD_Init();
+
+        WriteCmdXLCD(0x01);
+        LCD_WriteChr_CGRAM(personaje,0);
+        LCD_WriteChr_CGRAM(personajeD,1);
+        LCD_WriteChr_CGRAM(personajeI,3);
+        _delay((unsigned long)((500)*(20000000/4000.0)));
+
+        while(1){
+
+
+                          WriteCmdXLCD(0x01);
+            _delay((unsigned long)((1)*(20000000/4000.0)));
+            putrsXLCD("Presionar boton");
+            while(f == 0){
+                cancion1();
+                             if(PORTBbits.RB0 == 1){
+                                    f = 0;
+                                }
+                                else{
+                                    f = 2;
+                                }
+            }
+
+
         }
-        }
-   }
-     else{
-                 LCD_XY(1,0);
-        LCD_Cadena("!Presionar boton ");
-                                if(PORTBbits.RB0 == 1){
-                            LCD_Comando(1);
-                            cancion1();
-        }
-     }
-
-
-
-
-
-
-    }
-
-
-
-
-
-    return (0);
-
-
-
 
 }
