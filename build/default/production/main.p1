@@ -55,35 +55,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8089
 [; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 8089: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
 [v _T0CONbits `VS348 ~T0 @X0 0 e@4053 ]
-"7421
-[; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7421:     struct {
-[s S319 :2 `uc 1 :1 `uc 1 ]
-[n S319 . . NOT_T1SYNC ]
-"7425
-[; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7425:     struct {
-[s S320 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S320 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS T1RUN RD16 ]
-"7434
-[; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7434:     struct {
-[s S321 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S321 . . T1SYNC . T1CKPS0 T1CKPS1 ]
-"7441
-[; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7441:     struct {
-[s S322 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S322 . . SOSCEN . T1RD16 ]
-"7420
-[; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7420: typedef union {
-[u S318 `S319 1 `S320 1 `S321 1 `S322 1 ]
-[n S318 . . . . . ]
-"7448
-[; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7448: extern volatile T1CONbits_t T1CONbits __attribute__((address(0xFCD)));
-[v _T1CONbits `VS318 ~T0 @X0 0 e@4045 ]
-"7532
-[; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7532: extern volatile unsigned char TMR1H __attribute__((address(0xFCF)));
-[v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
-"7525
-[; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 7525: extern volatile unsigned char TMR1L __attribute__((address(0xFCE)));
-[v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
 "6581
 [; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6581: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
@@ -688,376 +659,322 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8893
 [; ;C:/Users/alana/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 main.c
-[; ;main.c: 13:   char buffer1[23];
+"14 main.c
+[; ;main.c: 14:   char buffer1[23];
 [v _buffer1 `uc ~T0 @X0 -> 23 `i e ]
-"14
-[; ;main.c: 14:     char buffer[20];
-[v _buffer `uc ~T0 @X0 -> 20 `i e ]
 "15
-[; ;main.c: 15:     int puntos = 0;
+[; ;main.c: 15:     char buffer[20];
+[v _buffer `uc ~T0 @X0 -> 20 `i e ]
+"16
+[; ;main.c: 16:     int puntos = 0;
 [v _puntos `i ~T0 @X0 1 e ]
 [i _puntos
 -> 0 `i
 ]
-"16
-[; ;main.c: 16:     int vel;
-[v _vel `i ~T0 @X0 1 e ]
 "17
-[; ;main.c: 17:    int contador = 1;
+[; ;main.c: 17:     int vel;
+[v _vel `i ~T0 @X0 1 e ]
+"18
+[; ;main.c: 18:    int contador = 1;
 [v _contador `i ~T0 @X0 1 e ]
 [i _contador
 -> 1 `i
 ]
-"18
-[; ;main.c: 18:       int tiempo2 = 0;
+"19
+[; ;main.c: 19:       int tiempo2 = 0;
 [v _tiempo2 `i ~T0 @X0 1 e ]
 [i _tiempo2
 -> 0 `i
 ]
-"19
-[; ;main.c: 19:    int k = 1;
+"20
+[; ;main.c: 20:    int k = 1;
 [v _k `i ~T0 @X0 1 e ]
 [i _k
 -> 1 `i
 ]
-"20
-[; ;main.c: 20:    unsigned char f = 0;
+"21
+[; ;main.c: 21:    unsigned char f = 0;
 [v _f `uc ~T0 @X0 1 e ]
 [i _f
 -> -> 0 `i `uc
 ]
-"21
-[; ;main.c: 21:    int i = 0;
+"22
+[; ;main.c: 22:    int i = 0;
 [v _i `i ~T0 @X0 1 e ]
 [i _i
 -> 0 `i
 ]
-"22
-[; ;main.c: 22:    int l = 15;
+"23
+[; ;main.c: 23:    int l = 15;
 [v _l `i ~T0 @X0 1 e ]
 [i _l
 -> 15 `i
 ]
-"23
-[; ;main.c: 23:    float tiempo = 0;
+"24
+[; ;main.c: 24:    float tiempo = 0;
 [v _tiempo `f ~T0 @X0 1 e ]
 [i _tiempo
 -> -> 0 `i `f
 ]
-"25
-[; ;main.c: 25:    int a,b,s;
+"26
+[; ;main.c: 26:    int a,b,s;
 [v _a `i ~T0 @X0 1 e ]
 [v _b `i ~T0 @X0 1 e ]
 [v _s `i ~T0 @X0 1 e ]
-"28
-[; ;main.c: 28:     void tocar_nota(int duracion, float tfrec){
+"29
+[; ;main.c: 29:     void tocar_nota(int duracion, float tfrec){
 [v _tocar_nota `(v ~T0 @X0 1 ef2`i`f ]
 {
 [e :U _tocar_nota ]
 [v _duracion `i ~T0 @X0 1 r1 ]
 [v _tfrec `f ~T0 @X0 1 r2 ]
 [f ]
-"30
-[; ;main.c: 30:      int duracion2;
-[v _duracion2 `i ~T0 @X0 1 a ]
 "31
-[; ;main.c: 31:      duracion2 = (int)duracion/tfrec;
-[e = _duracion2 -> / -> _duracion `f _tfrec `i ]
+[; ;main.c: 31:      int duracion2;
+[v _duracion2 `i ~T0 @X0 1 a ]
 "32
-[; ;main.c: 32:      tfrec = 255-((tfrec/2)/(.0002*128));
+[; ;main.c: 32:      duracion2 = (int)duracion/tfrec;
+[e = _duracion2 -> / -> _duracion `f _tfrec `i ]
+"33
+[; ;main.c: 33:      tfrec = 255-((tfrec/2)/(.0002*128));
 [e = _tfrec -> - -> -> 255 `i `d / -> / _tfrec -> -> 2 `i `f `d * .0.0002 -> -> 128 `i `d `f ]
-"34
-[; ;main.c: 34:        for(b=0;b<duracion2;b++){
+"35
+[; ;main.c: 35:        for(b=0;b<duracion2;b++){
 {
 [e = _b -> 0 `i ]
 [e $U 373  ]
 [e :U 370 ]
 {
-"35
-[; ;main.c: 35:             if(PORTBbits.RB0 == 1){
+"36
+[; ;main.c: 36:             if(PORTBbits.RB0 == 1){
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 374  ]
 {
-"36
-[; ;main.c: 36:                                     k = 0;
-[e = _k -> 0 `i ]
 "37
-[; ;main.c: 37:                                 }
+[; ;main.c: 37:                                     k = 0;
+[e = _k -> 0 `i ]
+"38
+[; ;main.c: 38:                                 }
 }
 [e $U 375  ]
-"38
-[; ;main.c: 38:                                 else{
+"39
+[; ;main.c: 39:                                 else{
 [e :U 374 ]
 {
-"39
-[; ;main.c: 39:                                     k = 1;
-[e = _k -> 1 `i ]
 "40
-[; ;main.c: 40:                                 }
+[; ;main.c: 40:                                     k = 1;
+[e = _k -> 1 `i ]
+"41
+[; ;main.c: 41:                                 }
 }
 [e :U 375 ]
-"41
-[; ;main.c: 41:            PORTBbits.RB1 = 1;
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
 "42
-[; ;main.c: 42:            TMR0 = tfrec;
-[e = _TMR0 -> _tfrec `us ]
+[; ;main.c: 42:            PORTBbits.RB1 = 1;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
 "43
-[; ;main.c: 43:            while(INTCONbits.TMR0IF==0);
+[; ;main.c: 43:            TMR0 = tfrec;
+[e = _TMR0 -> _tfrec `us ]
+"44
+[; ;main.c: 44:            while(INTCONbits.TMR0IF==0);
 [e $U 376  ]
 [e :U 377 ]
 [e :U 376 ]
 [e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 377  ]
 [e :U 378 ]
-"44
-[; ;main.c: 44:            INTCONbits.TMR0IF=0;
+"45
+[; ;main.c: 45:            INTCONbits.TMR0IF=0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:         PORTBbits.RB1=0;
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
 "47
-[; ;main.c: 47:          TMR0 = tfrec;
-[e = _TMR0 -> _tfrec `us ]
+[; ;main.c: 47:         PORTBbits.RB1=0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
 "48
-[; ;main.c: 48:          while(INTCONbits.TMR0IF==0);
+[; ;main.c: 48:          TMR0 = tfrec;
+[e = _TMR0 -> _tfrec `us ]
+"49
+[; ;main.c: 49:          while(INTCONbits.TMR0IF==0);
 [e $U 379  ]
 [e :U 380 ]
 [e :U 379 ]
 [e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 380  ]
 [e :U 381 ]
-"49
-[; ;main.c: 49:          INTCONbits.TMR0IF=0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "50
-[; ;main.c: 50: }
+[; ;main.c: 50:          INTCONbits.TMR0IF=0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"51
+[; ;main.c: 51:     }
 }
 [e ++ _b -> 1 `i ]
 [e :U 373 ]
 [e $ < _b _duracion2 370  ]
 [e :U 371 ]
 }
-"52
-[; ;main.c: 52:  }
+"53
+[; ;main.c: 53:  }
 [e :UE 369 ]
 }
-"53
-[; ;main.c: 53:  void silencio(int duracion, float tfrec){
+"54
+[; ;main.c: 54:  void silencio(int duracion, float tfrec){
 [v _silencio `(v ~T0 @X0 1 ef2`i`f ]
 {
 [e :U _silencio ]
 [v _duracion `i ~T0 @X0 1 r1 ]
 [v _tfrec `f ~T0 @X0 1 r2 ]
 [f ]
-"55
-[; ;main.c: 55:      duracion = duracion/tfrec;
-[e = _duracion -> / -> _duracion `f _tfrec `i ]
 "56
-[; ;main.c: 56:      tfrec = 255-((tfrec/2)/(.0002*128));
+[; ;main.c: 56:      duracion = duracion/tfrec;
+[e = _duracion -> / -> _duracion `f _tfrec `i ]
+"57
+[; ;main.c: 57:      tfrec = 255-((tfrec/2)/(.0002*128));
 [e = _tfrec -> - -> -> 255 `i `d / -> / _tfrec -> -> 2 `i `f `d * .0.0002 -> -> 128 `i `d `f ]
-"58
-[; ;main.c: 58:        for(b=0;b<duracion;b++){
+"59
+[; ;main.c: 59:        for(b=0;b<duracion;b++){
 {
 [e = _b -> 0 `i ]
 [e $U 386  ]
 [e :U 383 ]
 {
-"59
-[; ;main.c: 59:                        if(PORTBbits.RB0 == 1){
+"60
+[; ;main.c: 60:                        if(PORTBbits.RB0 == 1){
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 387  ]
 {
-"60
-[; ;main.c: 60:                                     k = 0;
-[e = _k -> 0 `i ]
 "61
-[; ;main.c: 61:                                 }
+[; ;main.c: 61:                                     k = 0;
+[e = _k -> 0 `i ]
+"62
+[; ;main.c: 62:                                 }
 }
 [e $U 388  ]
-"62
-[; ;main.c: 62:                                 else{
+"63
+[; ;main.c: 63:                                 else{
 [e :U 387 ]
 {
-"63
-[; ;main.c: 63:                                     k = 1;
-[e = _k -> 1 `i ]
 "64
-[; ;main.c: 64:                                 }
+[; ;main.c: 64:                                     k = 1;
+[e = _k -> 1 `i ]
+"65
+[; ;main.c: 65:                                 }
 }
 [e :U 388 ]
-"65
-[; ;main.c: 65:             PORTBbits.RB1 = 0;
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
 "66
-[; ;main.c: 66:            TMR0 = tfrec;
-[e = _TMR0 -> _tfrec `us ]
-"67
-[; ;main.c: 67:            while(INTCONbits.TMR0IF==0);
-[e $U 389  ]
-[e :U 390 ]
-[e :U 389 ]
-[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 390  ]
-[e :U 391 ]
-"68
-[; ;main.c: 68:            INTCONbits.TMR0IF=0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"70
-[; ;main.c: 70:         PORTBbits.RB1=0;
+[; ;main.c: 66:             PORTBbits.RB1 = 0;
 [e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"71
-[; ;main.c: 71:          TMR0 = tfrec;
+"67
+[; ;main.c: 67:            TMR0 = tfrec;
 [e = _TMR0 -> _tfrec `us ]
+"71
+[; ;main.c: 71:         PORTBbits.RB1=0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
 "72
-[; ;main.c: 72:          while(INTCONbits.TMR0IF==0);
-[e $U 392  ]
-[e :U 393 ]
-[e :U 392 ]
-[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 393  ]
-[e :U 394 ]
-"73
-[; ;main.c: 73:          INTCONbits.TMR0IF=0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"74
-[; ;main.c: 74: }
+[; ;main.c: 72:          TMR0 = tfrec;
+[e = _TMR0 -> _tfrec `us ]
+"75
+[; ;main.c: 75: }
 }
 [e ++ _b -> 1 `i ]
 [e :U 386 ]
 [e $ < _b _duracion 383  ]
 [e :U 384 ]
 }
-"75
-[; ;main.c: 75:  }
+"76
+[; ;main.c: 76:  }
 [e :UE 382 ]
 }
-"78
-[; ;main.c: 78:  void confT0(){
+"79
+[; ;main.c: 79:  void confT0(){
 [v _confT0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _confT0 ]
 [f ]
-"80
-[; ;main.c: 80:     T0CONbits.TMR0ON = 1;
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "81
-[; ;main.c: 81:       T0CONbits.T08BIT = 1;
-[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 81:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "82
-[; ;main.c: 82:       T0CONbits.T0CS = 0;
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 82:       T0CONbits.T08BIT = 1;
+[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
 "83
-[; ;main.c: 83:       T0CONbits.T0SE = 0;
-[e = . . _T0CONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 83:       T0CONbits.T0CS = 0;
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
 "84
-[; ;main.c: 84:       T0CONbits.PSA = 0;
-[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 84:       T0CONbits.T0SE = 0;
+[e = . . _T0CONbits 0 2 -> -> 0 `i `uc ]
 "85
-[; ;main.c: 85:       T0CONbits.T0PS = 0b110;
+[; ;main.c: 85:       T0CONbits.PSA = 0;
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+"86
+[; ;main.c: 86:       T0CONbits.T0PS = 0b110;
 [e = . . _T0CONbits 0 0 -> -> 6 `i `uc ]
-"87
-[; ;main.c: 87:       INTCONbits.TMR0IE = 1;
+"88
+[; ;main.c: 88:       INTCONbits.TMR0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"90
-[; ;main.c: 90:  }
-[e :UE 395 ]
-}
 "91
-[; ;main.c: 91:   void confT1(){
-[v _confT1 `(v ~T0 @X0 1 ef ]
-{
-[e :U _confT1 ]
-[f ]
-"93
-[; ;main.c: 93:     T1CONbits.RD16 = 1;
-[e = . . _T1CONbits 1 6 -> -> 1 `i `uc ]
-"94
-[; ;main.c: 94:       T1CONbits.T1CKPS = 0b11;
-[e = . . _T1CONbits 1 4 -> -> 3 `i `uc ]
-"95
-[; ;main.c: 95:       T1CONbits.T1OSCEN = 1;
-[e = . . _T1CONbits 1 3 -> -> 1 `i `uc ]
-"96
-[; ;main.c: 96:       T1CONbits.T1SYNC = 1;
-[e = . . _T1CONbits 2 1 -> -> 1 `i `uc ]
-"97
-[; ;main.c: 97:       T1CONbits.TMR1CS = 0;
-[e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
-"98
-[; ;main.c: 98:       T1CONbits.TMR1ON = 0b110;
-[e = . . _T1CONbits 1 0 -> -> 6 `i `uc ]
-"99
-[; ;main.c: 99:     TMR1H = 0xFF;
-[e = _TMR1H -> -> 255 `i `uc ]
-"100
-[; ;main.c: 100:     TMR1L = 0xFF;
-[e = _TMR1L -> -> 255 `i `uc ]
-"102
-[; ;main.c: 102:  }
-[e :UE 396 ]
+[; ;main.c: 91:  }
+[e :UE 389 ]
 }
-"104
-[; ;main.c: 104:  void confADC(){
+"105
+[; ;main.c: 105:  void confADC(){
 [v _confADC `(v ~T0 @X0 1 ef ]
 {
 [e :U _confADC ]
 [f ]
-"105
-[; ;main.c: 105:      ADCON1 = 0b00001110;
-[e = _ADCON1 -> -> 14 `i `uc ]
 "106
-[; ;main.c: 106:     ADCON2 = 0b10111010;
-[e = _ADCON2 -> -> 186 `i `uc ]
+[; ;main.c: 106:      ADCON1 = 0b00001110;
+[e = _ADCON1 -> -> 14 `i `uc ]
 "107
-[; ;main.c: 107:     ADRESH=0;
-[e = _ADRESH -> -> 0 `i `uc ]
+[; ;main.c: 107:     ADCON2 = 0b10111010;
+[e = _ADCON2 -> -> 186 `i `uc ]
 "108
-[; ;main.c: 108:     ADRESL=0;
+[; ;main.c: 108:     ADRESH=0;
+[e = _ADRESH -> -> 0 `i `uc ]
+"109
+[; ;main.c: 109:     ADRESL=0;
 [e = _ADRESL -> -> 0 `i `uc ]
-"110
-[; ;main.c: 110:  }
-[e :UE 397 ]
-}
 "111
-[; ;main.c: 111:  int leerADC(int canal){
+[; ;main.c: 111:  }
+[e :UE 390 ]
+}
+"112
+[; ;main.c: 112:  int leerADC(int canal){
 [v _leerADC `(i ~T0 @X0 1 ef1`i ]
 {
 [e :U _leerADC ]
 [v _canal `i ~T0 @X0 1 r1 ]
 [f ]
-"112
-[; ;main.c: 112:     int digital;
-[v _digital `i ~T0 @X0 1 a ]
 "113
-[; ;main.c: 113:     int final;
-[v _final `i ~T0 @X0 1 a ]
+[; ;main.c: 113:     int digital;
+[v _digital `i ~T0 @X0 1 a ]
 "114
-[; ;main.c: 114:     ADCON0 =(ADCON0 & 0b11000011)|((canal<<2) & 0b00111100);
-[e = _ADCON0 -> | & -> _ADCON0 `i -> 195 `i & << _canal -> 2 `i -> 60 `i `uc ]
+[; ;main.c: 114:     int final;
+[v _final `i ~T0 @X0 1 a ]
 "115
-[; ;main.c: 115:     ADCON0 |= ((1<<ADON)|(1<<GO));
-[e =| _ADCON0 -> | << -> 1 `i -> _ADON `i << -> 1 `i -> _GO `i `Vuc ]
+[; ;main.c: 115:     ADCON0 =(ADCON0 & 0b11000011)|((canal<<2) & 0b00111100);
+[e = _ADCON0 -> | & -> _ADCON0 `i -> 195 `i & << _canal -> 2 `i -> 60 `i `uc ]
 "116
-[; ;main.c: 116:     while(ADCON0bits.GO_nDONE==1);
-[e $U 399  ]
-[e :U 400 ]
-[e :U 399 ]
-[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 400  ]
-[e :U 401 ]
+[; ;main.c: 116:     ADCON0 |= ((1<<ADON)|(1<<GO));
+[e =| _ADCON0 -> | << -> 1 `i -> _ADON `i << -> 1 `i -> _GO `i `Vuc ]
 "117
-[; ;main.c: 117:     digital = ((ADRESH << 8) + ADRESL);
-[e = _digital + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
+[; ;main.c: 117:     while(ADCON0bits.GO_nDONE==1);
+[e $U 392  ]
+[e :U 393 ]
+[e :U 392 ]
+[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 393  ]
+[e :U 394 ]
 "118
-[; ;main.c: 118:     final = digital/64;
-[e = _final / _digital -> 64 `i ]
+[; ;main.c: 118:     digital = ((ADRESH << 8) + ADRESL);
+[e = _digital + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
 "119
-[; ;main.c: 119:     return(final);
-[e ) _final ]
-[e $UE 398  ]
+[; ;main.c: 119:     final = digital/64;
+[e = _final / _digital -> 64 `i ]
 "120
-[; ;main.c: 120:  }
-[e :UE 398 ]
+[; ;main.c: 120:     return(final);
+[e ) _final ]
+[e $UE 391  ]
+"121
+[; ;main.c: 121:  }
+[e :UE 391 ]
 }
-[v F3565 `f ~T0 @X0 -> 3 `i t ]
-"122
-[; ;main.c: 122:   float cancion[44][3] =
-[v _cancion `F3565 ~T0 @X0 -> 44 `i e ]
+[v F3564 `f ~T0 @X0 -> 3 `i t ]
+"123
+[; ;main.c: 123:   float cancion[44][3] =
+[v _cancion `F3564 ~T0 @X0 -> 44 `i e ]
 [i _cancion
 :U ..
 :U ..
@@ -1282,493 +1199,493 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"131
-[; ;main.c: 131: int cancion1(){
+"132
+[; ;main.c: 132: int cancion1(){
 [v _cancion1 `(i ~T0 @X0 1 ef ]
 {
 [e :U _cancion1 ]
 [f ]
-"133
-[; ;main.c: 133:     while(puntos >= 0){
-[e $U 403  ]
-[e :U 404 ]
-{
 "134
-[; ;main.c: 134:         for( int j = 0; j < 44; j ++){
+[; ;main.c: 134:     while(puntos >= 0){
+[e $U 396  ]
+[e :U 397 ]
+{
+"135
+[; ;main.c: 135:         for( int j = 0; j < 44; j ++){
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 0 `i ]
-[e $ < _j -> 44 `i 406  ]
-[e $U 407  ]
-[e :U 406 ]
+[e $ < _j -> 44 `i 399  ]
+[e $U 400  ]
+[e :U 399 ]
 {
-"136
-[; ;main.c: 136: if(i < 15 && l >= 0 && f == 0){
-[e $ ! && && < _i -> 15 `i >= _l -> 0 `i == -> _f `i -> 0 `i 409  ]
+"137
+[; ;main.c: 137: if(i < 15 && l >= 0 && f == 0){
+[e $ ! && && < _i -> 15 `i >= _l -> 0 `i == -> _f `i -> 0 `i 402  ]
 {
-"139
-[; ;main.c: 139:                         if(cancion[j][2] == 1){
-[e $ ! == *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1 `i `f 410  ]
+"140
+[; ;main.c: 140:                         if(cancion[j][2] == 1){
+[e $ ! == *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1 `i `f 403  ]
 {
-"141
-[; ;main.c: 141:                             WriteCmdXLCD(0x01);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
 "142
-[; ;main.c: 142:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 142:                             WriteCmdXLCD(0x01);
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
 "143
-[; ;main.c: 143:                            LCD_gotoXY(k,leerADC(0));
-[e ( _LCD_gotoXY (2 , _k ( _leerADC (1 -> 0 `i ]
+[; ;main.c: 143:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "144
-[; ;main.c: 144:                             WriteDataXLCD(0);
-[e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
+[; ;main.c: 144:                             LCD_gotoXY(k,leerADC(0));
+[e ( _LCD_gotoXY (2 , _k ( _leerADC (1 -> 0 `i ]
 "145
-[; ;main.c: 145:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 145:                             WriteDataXLCD(0);
+[e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
 "146
-[; ;main.c: 146:                             LCD_gotoXY(1,l);
-[e ( _LCD_gotoXY (2 , -> 1 `i _l ]
-"147
-[; ;main.c: 147:                             WriteDataXLCD(3);
-[e ( _WriteDataXLCD (1 -> -> 3 `i `uc ]
-"148
-[; ;main.c: 148:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[; ;main.c: 146:                             _delay((unsigned long)((1)*(20000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"147
+[; ;main.c: 147:                             LCD_gotoXY(1,l);
+[e ( _LCD_gotoXY (2 , -> 1 `i _l ]
+"148
+[; ;main.c: 148:                             WriteDataXLCD(3);
+[e ( _WriteDataXLCD (1 -> -> 3 `i `uc ]
 "149
-[; ;main.c: 149:                             LCD_gotoXY(1,12);
-[e ( _LCD_gotoXY (2 , -> 1 `i -> 12 `i ]
+[; ;main.c: 149:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "150
-[; ;main.c: 150:                             sprintf(buffer1,"%i",puntos);
-[e ( _sprintf (1 , (. , &U _buffer1 :s 1C _puntos ]
+[; ;main.c: 150:                             LCD_gotoXY(1,12);
+[e ( _LCD_gotoXY (2 , -> 1 `i -> 12 `i ]
 "151
-[; ;main.c: 151:                              putrsXLCD(buffer1);
+[; ;main.c: 151:                             sprintf(buffer1,"%i",puntos);
+[e ( _sprintf (1 , (. , &U _buffer1 :s 1C _puntos ]
+"152
+[; ;main.c: 152:                              putrsXLCD(buffer1);
 [e ( _putrsXLCD (1 -> &U _buffer1 `*Cuc ]
-"153
-[; ;main.c: 153:                                  if(leerADC(0) == l && k == 1){
-[e $ ! && == ( _leerADC (1 -> 0 `i _l == _k -> 1 `i 411  ]
-{
 "154
-[; ;main.c: 154:                                    puntos = puntos - contador;
-[e = _puntos - _puntos _contador ]
+[; ;main.c: 154:                                  if(leerADC(0) == l && k == 1){
+[e $ ! && == ( _leerADC (1 -> 0 `i _l == _k -> 1 `i 404  ]
+{
 "155
-[; ;main.c: 155:                                }
+[; ;main.c: 155:                                    puntos = puntos - contador;
+[e = _puntos - _puntos _contador ]
+"156
+[; ;main.c: 156:                                }
+}
+[e :U 404 ]
+"157
+[; ;main.c: 157:                          tocar_nota(vel*cancion[j][0],cancion[j][1]);
+[e ( _tocar_nota (2 , -> * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux `i *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux ]
+"158
+[; ;main.c: 158:                           tiempo = tiempo + ((vel*cancion[j][0])/1000);
+[e = _tiempo + _tiempo / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f ]
+"159
+[; ;main.c: 159:                           tiempo2 = tiempo2 + ((vel*cancion[j][0])/1000);
+[e = _tiempo2 -> + -> _tiempo2 `f / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f `i ]
+"161
+[; ;main.c: 161:                           if(tiempo2 >= 1){
+[e $ ! >= _tiempo2 -> 1 `i 405  ]
+{
+"162
+[; ;main.c: 162:                               puntos = puntos + contador;
+[e = _puntos + _puntos _contador ]
+"163
+[; ;main.c: 163:                               tiempo2 = 0;
+[e = _tiempo2 -> 0 `i ]
+"164
+[; ;main.c: 164:                              }
+}
+[e :U 405 ]
+"165
+[; ;main.c: 165:                             if(tiempo >= 15){
+[e $ ! >= _tiempo -> -> 15 `i `f 406  ]
+{
+"166
+[; ;main.c: 166:                                 contador ++;
+[e ++ _contador -> 1 `i ]
+"167
+[; ;main.c: 167:                               vel = vel/contador;
+[e = _vel / _vel _contador ]
+"168
+[; ;main.c: 168:                                 tiempo = 0;
+[e = _tiempo -> -> 0 `i `f ]
+"170
+[; ;main.c: 170:                             }
+}
+[e :U 406 ]
+"172
+[; ;main.c: 172:                      }
+}
+[e $U 407  ]
+"174
+[; ;main.c: 174:                      else if(cancion[j][2] == 0){
+[e :U 403 ]
+[e $ ! == *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 0 `i `f 408  ]
+{
+"175
+[; ;main.c: 175:                             WriteCmdXLCD(0x01);
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
+"176
+[; ;main.c: 176:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"177
+[; ;main.c: 177:                            LCD_gotoXY(k,leerADC(0));
+[e ( _LCD_gotoXY (2 , _k ( _leerADC (1 -> 0 `i ]
+"178
+[; ;main.c: 178:                             WriteDataXLCD(0);
+[e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
+"179
+[; ;main.c: 179:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"180
+[; ;main.c: 180:                             LCD_gotoXY(1,l);
+[e ( _LCD_gotoXY (2 , -> 1 `i _l ]
+"181
+[; ;main.c: 181:                             WriteDataXLCD(3);
+[e ( _WriteDataXLCD (1 -> -> 3 `i `uc ]
+"182
+[; ;main.c: 182:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"183
+[; ;main.c: 183:                             LCD_gotoXY(1,12);
+[e ( _LCD_gotoXY (2 , -> 1 `i -> 12 `i ]
+"184
+[; ;main.c: 184:                             sprintf(buffer1,"%i",puntos);
+[e ( _sprintf (1 , (. , &U _buffer1 :s 2C _puntos ]
+"185
+[; ;main.c: 185:                              putrsXLCD(buffer1);
+[e ( _putrsXLCD (1 -> &U _buffer1 `*Cuc ]
+"187
+[; ;main.c: 187:                                 if(leerADC(0) == l && k == 1){
+[e $ ! && == ( _leerADC (1 -> 0 `i _l == _k -> 1 `i 409  ]
+{
+"188
+[; ;main.c: 188:                                    puntos = puntos - contador;
+[e = _puntos - _puntos _contador ]
+"189
+[; ;main.c: 189:                                }
+}
+[e :U 409 ]
+"190
+[; ;main.c: 190:                   silencio(vel*cancion[j][0],cancion[j][1]);
+[e ( _silencio (2 , -> * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux `i *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux ]
+"191
+[; ;main.c: 191:                  tiempo = tiempo + ((vel*cancion[j][0])/1000);
+[e = _tiempo + _tiempo / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f ]
+"192
+[; ;main.c: 192:                  tiempo2 = tiempo2 + ((vel*cancion[j][0])/1000);
+[e = _tiempo2 -> + -> _tiempo2 `f / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f `i ]
+"194
+[; ;main.c: 194:                           if(tiempo2 >= 1){
+[e $ ! >= _tiempo2 -> 1 `i 410  ]
+{
+"195
+[; ;main.c: 195:                               puntos = puntos + contador;
+[e = _puntos + _puntos _contador ]
+"196
+[; ;main.c: 196:                               tiempo2 = 0;
+[e = _tiempo2 -> 0 `i ]
+"197
+[; ;main.c: 197:                              }
+}
+[e :U 410 ]
+"198
+[; ;main.c: 198:                             if(tiempo >= 15){
+[e $ ! >= _tiempo -> -> 15 `i `f 411  ]
+{
+"199
+[; ;main.c: 199:                                 contador ++;
+[e ++ _contador -> 1 `i ]
+"200
+[; ;main.c: 200:                               vel = vel/contador;
+[e = _vel / _vel _contador ]
+"201
+[; ;main.c: 201:                                 tiempo = 0;
+[e = _tiempo -> -> 0 `i `f ]
+"203
+[; ;main.c: 203:                             }
 }
 [e :U 411 ]
-"156
-[; ;main.c: 156:                          tocar_nota(vel*cancion[j][0],cancion[j][1]);
-[e ( _tocar_nota (2 , -> * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux `i *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux ]
-"157
-[; ;main.c: 157:                           tiempo = tiempo + ((vel*cancion[j][0])/1000);
-[e = _tiempo + _tiempo / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f ]
-"158
-[; ;main.c: 158:                           tiempo2 = tiempo2 + ((vel*cancion[j][0])/1000);
-[e = _tiempo2 -> + -> _tiempo2 `f / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f `i ]
-"160
-[; ;main.c: 160:                           if(tiempo2 >= 1){
-[e $ ! >= _tiempo2 -> 1 `i 412  ]
+"206
+[; ;main.c: 206:                      }
+}
+[e :U 408 ]
+[e :U 407 ]
+"207
+[; ;main.c: 207:                             WriteCmdXLCD(0x01);
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
+"208
+[; ;main.c: 208:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"209
+[; ;main.c: 209:             i++;
+[e ++ _i -> 1 `i ]
+"210
+[; ;main.c: 210:             l--;
+[e -- _l -> 1 `i ]
+"211
+[; ;main.c: 211:          f = 0;
+[e = _f -> -> 0 `i `uc ]
+"212
+[; ;main.c: 212:          if(i == 14){
+[e $ ! == _i -> 14 `i 412  ]
 {
-"161
-[; ;main.c: 161:                               puntos = puntos + contador;
-[e = _puntos + _puntos _contador ]
-"162
-[; ;main.c: 162:                               tiempo2 = 0;
-[e = _tiempo2 -> 0 `i ]
-"163
-[; ;main.c: 163:                              }
+"213
+[; ;main.c: 213:              f = 1;
+[e = _f -> -> 1 `i `uc ]
+"214
+[; ;main.c: 214:          }
 }
 [e :U 412 ]
-"164
-[; ;main.c: 164:                             if(tiempo >= 15){
-[e $ ! >= _tiempo -> -> 15 `i `f 413  ]
-{
-"165
-[; ;main.c: 165:                                 contador ++;
-[e ++ _contador -> 1 `i ]
-"166
-[; ;main.c: 166:                               vel = vel/contador;
-[e = _vel / _vel _contador ]
-"167
-[; ;main.c: 167:                                 tiempo = 0;
-[e = _tiempo -> -> 0 `i `f ]
-"169
-[; ;main.c: 169:                             }
+"217
+[; ;main.c: 217:         }
 }
-[e :U 413 ]
-"171
-[; ;main.c: 171:                      }
-}
-[e $U 414  ]
-"173
-[; ;main.c: 173:                      else if(cancion[j][2] == 0){
-[e :U 410 ]
-[e $ ! == *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 0 `i `f 415  ]
-{
-"174
-[; ;main.c: 174:                             WriteCmdXLCD(0x01);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"175
-[; ;main.c: 175:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"176
-[; ;main.c: 176:                            LCD_gotoXY(k,leerADC(0));
-[e ( _LCD_gotoXY (2 , _k ( _leerADC (1 -> 0 `i ]
-"177
-[; ;main.c: 177:                             WriteDataXLCD(0);
-[e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
-"178
-[; ;main.c: 178:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"179
-[; ;main.c: 179:                             LCD_gotoXY(1,l);
-[e ( _LCD_gotoXY (2 , -> 1 `i _l ]
-"180
-[; ;main.c: 180:                             WriteDataXLCD(3);
-[e ( _WriteDataXLCD (1 -> -> 3 `i `uc ]
-"181
-[; ;main.c: 181:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"182
-[; ;main.c: 182:                             LCD_gotoXY(1,12);
-[e ( _LCD_gotoXY (2 , -> 1 `i -> 12 `i ]
-"183
-[; ;main.c: 183:                             sprintf(buffer1,"%i",puntos);
-[e ( _sprintf (1 , (. , &U _buffer1 :s 2C _puntos ]
-"184
-[; ;main.c: 184:                              putrsXLCD(buffer1);
-[e ( _putrsXLCD (1 -> &U _buffer1 `*Cuc ]
-"186
-[; ;main.c: 186:                                 if(leerADC(0) == l && k == 1){
-[e $ ! && == ( _leerADC (1 -> 0 `i _l == _k -> 1 `i 416  ]
-{
-"187
-[; ;main.c: 187:                                    puntos = puntos - contador;
-[e = _puntos - _puntos _contador ]
-"188
-[; ;main.c: 188:                                }
-}
-[e :U 416 ]
-"189
-[; ;main.c: 189:                   silencio(vel*cancion[j][0],cancion[j][1]);
-[e ( _silencio (2 , -> * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux `i *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux ]
-"190
-[; ;main.c: 190:                  tiempo = tiempo + ((vel*cancion[j][0])/1000);
-[e = _tiempo + _tiempo / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f ]
-"191
-[; ;main.c: 191:                  tiempo2 = tiempo2 + ((vel*cancion[j][0])/1000);
-[e = _tiempo2 -> + -> _tiempo2 `f / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f `i ]
-"193
-[; ;main.c: 193:                           if(tiempo2 >= 1){
-[e $ ! >= _tiempo2 -> 1 `i 417  ]
-{
-"194
-[; ;main.c: 194:                               puntos = puntos + contador;
-[e = _puntos + _puntos _contador ]
-"195
-[; ;main.c: 195:                               tiempo2 = 0;
-[e = _tiempo2 -> 0 `i ]
-"196
-[; ;main.c: 196:                              }
-}
-[e :U 417 ]
-"197
-[; ;main.c: 197:                             if(tiempo >= 15){
-[e $ ! >= _tiempo -> -> 15 `i `f 418  ]
-{
-"198
-[; ;main.c: 198:                                 contador ++;
-[e ++ _contador -> 1 `i ]
-"199
-[; ;main.c: 199:                               vel = vel/contador;
-[e = _vel / _vel _contador ]
-"200
-[; ;main.c: 200:                                 tiempo = 0;
-[e = _tiempo -> -> 0 `i `f ]
-"202
-[; ;main.c: 202:                             }
-}
-[e :U 418 ]
-"205
-[; ;main.c: 205:                      }
-}
-[e :U 415 ]
-[e :U 414 ]
-"206
-[; ;main.c: 206:                             WriteCmdXLCD(0x01);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"207
-[; ;main.c: 207:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"208
-[; ;main.c: 208:             i++;
-[e ++ _i -> 1 `i ]
-"209
-[; ;main.c: 209:             l--;
-[e -- _l -> 1 `i ]
-"210
-[; ;main.c: 210:          f = 0;
-[e = _f -> -> 0 `i `uc ]
-"211
-[; ;main.c: 211:          if(i == 14){
-[e $ ! == _i -> 14 `i 419  ]
-{
-"212
-[; ;main.c: 212:              f = 1;
-[e = _f -> -> 1 `i `uc ]
-"213
-[; ;main.c: 213:          }
-}
-[e :U 419 ]
-"216
-[; ;main.c: 216:         }
-}
-[e $U 420  ]
-"219
-[; ;main.c: 219: else if(i >= 0 && l < 15 && f == 1 ){
-[e :U 409 ]
-[e $ ! && && >= _i -> 0 `i < _l -> 15 `i == -> _f `i -> 1 `i 421  ]
-{
-"221
-[; ;main.c: 221:                       if(cancion[j][2] == 1){
-[e $ ! == *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1 `i `f 422  ]
+[e $U 413  ]
+"220
+[; ;main.c: 220: else if(i >= 0 && l < 15 && f == 1 ){
+[e :U 402 ]
+[e $ ! && && >= _i -> 0 `i < _l -> 15 `i == -> _f `i -> 1 `i 414  ]
 {
 "222
-[; ;main.c: 222:                              WriteCmdXLCD(0x01);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
+[; ;main.c: 222:                       if(cancion[j][2] == 1){
+[e $ ! == *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1 `i `f 415  ]
+{
 "223
-[; ;main.c: 223:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 223:                              WriteCmdXLCD(0x01);
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
 "224
-[; ;main.c: 224:                            LCD_gotoXY(k,leerADC(0));
-[e ( _LCD_gotoXY (2 , _k ( _leerADC (1 -> 0 `i ]
+[; ;main.c: 224:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "225
-[; ;main.c: 225:                             WriteDataXLCD(0);
-[e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
-"226
-[; ;main.c: 226:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"227
-[; ;main.c: 227:                             LCD_gotoXY(1,l);
-[e ( _LCD_gotoXY (2 , -> 1 `i _l ]
-"228
-[; ;main.c: 228:                             WriteDataXLCD(1);
-[e ( _WriteDataXLCD (1 -> -> 1 `i `uc ]
-"229
-[; ;main.c: 229:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"230
-[; ;main.c: 230:                             LCD_gotoXY(1,12);
-[e ( _LCD_gotoXY (2 , -> 1 `i -> 12 `i ]
-"231
-[; ;main.c: 231:                             sprintf(buffer1,"%i",puntos);
-[e ( _sprintf (1 , (. , &U _buffer1 :s 3C _puntos ]
-"232
-[; ;main.c: 232:                              putrsXLCD(buffer1);
-[e ( _putrsXLCD (1 -> &U _buffer1 `*Cuc ]
-"234
-[; ;main.c: 234:                                 if(leerADC(0) == l && k == 1){
-[e $ ! && == ( _leerADC (1 -> 0 `i _l == _k -> 1 `i 423  ]
-{
-"235
-[; ;main.c: 235:                                    puntos = puntos - contador;
-[e = _puntos - _puntos _contador ]
-"236
-[; ;main.c: 236:                                }
-}
-[e :U 423 ]
-"237
-[; ;main.c: 237:                             tocar_nota(vel*cancion[j][0],cancion[j][1]);
-[e ( _tocar_nota (2 , -> * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux `i *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux ]
-"239
-[; ;main.c: 239:                  tiempo = tiempo + ((vel*cancion[j][0])/1000);
-[e = _tiempo + _tiempo / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f ]
-"240
-[; ;main.c: 240:                  tiempo2 = tiempo2 + ((vel*cancion[j][0])/1000);
-[e = _tiempo2 -> + -> _tiempo2 `f / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f `i ]
-"242
-[; ;main.c: 242:                           if(tiempo2 >= 1){
-[e $ ! >= _tiempo2 -> 1 `i 424  ]
-{
-"243
-[; ;main.c: 243:                               puntos = puntos + contador;
-[e = _puntos + _puntos _contador ]
-"244
-[; ;main.c: 244:                               tiempo2 = 0;
-[e = _tiempo2 -> 0 `i ]
-"245
-[; ;main.c: 245:                              }
-}
-[e :U 424 ]
-"246
-[; ;main.c: 246:                             if(tiempo >= 15){
-[e $ ! >= _tiempo -> -> 15 `i `f 425  ]
-{
-"247
-[; ;main.c: 247:                                 contador ++;
-[e ++ _contador -> 1 `i ]
-"248
-[; ;main.c: 248:                               vel = vel/contador;
-[e = _vel / _vel _contador ]
-"249
-[; ;main.c: 249:                                 tiempo = 0;
-[e = _tiempo -> -> 0 `i `f ]
-"251
-[; ;main.c: 251:                             }
-}
-[e :U 425 ]
-"254
-[; ;main.c: 254:                      }
-}
-[e $U 426  ]
-"256
-[; ;main.c: 256:                      else if(cancion[j][2] == 0){
-[e :U 422 ]
-[e $ ! == *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 0 `i `f 427  ]
-{
-"257
-[; ;main.c: 257:                         WriteCmdXLCD(0x01);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"258
-[; ;main.c: 258:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"259
-[; ;main.c: 259:                            LCD_gotoXY(k,leerADC(0));
+[; ;main.c: 225:                            LCD_gotoXY(k,leerADC(0));
 [e ( _LCD_gotoXY (2 , _k ( _leerADC (1 -> 0 `i ]
-"260
-[; ;main.c: 260:                             WriteDataXLCD(0);
+"226
+[; ;main.c: 226:                             WriteDataXLCD(0);
 [e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
-"261
-[; ;main.c: 261:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+"227
+[; ;main.c: 227:                             _delay((unsigned long)((1)*(20000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"262
-[; ;main.c: 262:                             LCD_gotoXY(1,l);
+"228
+[; ;main.c: 228:                             LCD_gotoXY(1,l);
 [e ( _LCD_gotoXY (2 , -> 1 `i _l ]
-"263
-[; ;main.c: 263:                             WriteDataXLCD(1);
+"229
+[; ;main.c: 229:                             WriteDataXLCD(1);
 [e ( _WriteDataXLCD (1 -> -> 1 `i `uc ]
-"264
-[; ;main.c: 264:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+"230
+[; ;main.c: 230:                             _delay((unsigned long)((1)*(20000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"265
-[; ;main.c: 265:                             LCD_gotoXY(1,12);
+"231
+[; ;main.c: 231:                             LCD_gotoXY(1,12);
 [e ( _LCD_gotoXY (2 , -> 1 `i -> 12 `i ]
-"266
-[; ;main.c: 266:                             sprintf(buffer1,"%i",puntos);
-[e ( _sprintf (1 , (. , &U _buffer1 :s 4C _puntos ]
-"267
-[; ;main.c: 267:                              putrsXLCD(buffer1);
+"232
+[; ;main.c: 232:                             sprintf(buffer1,"%i",puntos);
+[e ( _sprintf (1 , (. , &U _buffer1 :s 3C _puntos ]
+"233
+[; ;main.c: 233:                              putrsXLCD(buffer1);
 [e ( _putrsXLCD (1 -> &U _buffer1 `*Cuc ]
-"269
-[; ;main.c: 269:                                if(leerADC(0) == l && k == 1){
-[e $ ! && == ( _leerADC (1 -> 0 `i _l == _k -> 1 `i 428  ]
+"235
+[; ;main.c: 235:                                 if(leerADC(0) == l && k == 1){
+[e $ ! && == ( _leerADC (1 -> 0 `i _l == _k -> 1 `i 416  ]
 {
-"270
-[; ;main.c: 270:                                    puntos = puntos - contador;
+"236
+[; ;main.c: 236:                                    puntos = puntos - contador;
 [e = _puntos - _puntos _contador ]
-"271
-[; ;main.c: 271:                                }
+"237
+[; ;main.c: 237:                                }
 }
-[e :U 428 ]
-"273
-[; ;main.c: 273:                          silencio(vel*cancion[j][0],cancion[j][1]);
-[e ( _silencio (2 , -> * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux `i *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux ]
-"276
-[; ;main.c: 276:                  tiempo = tiempo + ((vel*cancion[j][0])/1000);
+[e :U 416 ]
+"238
+[; ;main.c: 238:                             tocar_nota(vel*cancion[j][0],cancion[j][1]);
+[e ( _tocar_nota (2 , -> * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux `i *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux ]
+"240
+[; ;main.c: 240:                  tiempo = tiempo + ((vel*cancion[j][0])/1000);
 [e = _tiempo + _tiempo / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f ]
-"277
-[; ;main.c: 277:                  tiempo2 = tiempo2 + ((vel*cancion[j][0])/1000);
+"241
+[; ;main.c: 241:                  tiempo2 = tiempo2 + ((vel*cancion[j][0])/1000);
 [e = _tiempo2 -> + -> _tiempo2 `f / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f `i ]
-"279
-[; ;main.c: 279:                           if(tiempo2 >= 1){
-[e $ ! >= _tiempo2 -> 1 `i 429  ]
+"243
+[; ;main.c: 243:                           if(tiempo2 >= 1){
+[e $ ! >= _tiempo2 -> 1 `i 417  ]
 {
-"280
-[; ;main.c: 280:                               puntos = puntos + contador;
+"244
+[; ;main.c: 244:                               puntos = puntos + contador;
 [e = _puntos + _puntos _contador ]
-"281
-[; ;main.c: 281:                               tiempo2 = 0;
+"245
+[; ;main.c: 245:                               tiempo2 = 0;
 [e = _tiempo2 -> 0 `i ]
-"282
-[; ;main.c: 282:                              }
+"246
+[; ;main.c: 246:                              }
 }
-[e :U 429 ]
-"283
-[; ;main.c: 283:                             if(tiempo >= 15){
-[e $ ! >= _tiempo -> -> 15 `i `f 430  ]
+[e :U 417 ]
+"247
+[; ;main.c: 247:                             if(tiempo >= 15){
+[e $ ! >= _tiempo -> -> 15 `i `f 418  ]
 {
-"284
-[; ;main.c: 284:                                 contador ++;
+"248
+[; ;main.c: 248:                                 contador ++;
 [e ++ _contador -> 1 `i ]
-"285
-[; ;main.c: 285:                               vel = vel/contador;
+"249
+[; ;main.c: 249:                               vel = vel/contador;
 [e = _vel / _vel _contador ]
-"286
-[; ;main.c: 286:                                 tiempo = 0;
+"250
+[; ;main.c: 250:                                 tiempo = 0;
 [e = _tiempo -> -> 0 `i `f ]
-"288
-[; ;main.c: 288:                             }
+"252
+[; ;main.c: 252:                             }
 }
-[e :U 430 ]
-"292
-[; ;main.c: 292:                      }
+[e :U 418 ]
+"255
+[; ;main.c: 255:                      }
 }
-[e :U 427 ]
-[e :U 426 ]
-"293
-[; ;main.c: 293:               WriteCmdXLCD(0x01);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"294
-[; ;main.c: 294:                             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"295
-[; ;main.c: 295:             i--;
-[e -- _i -> 1 `i ]
-"296
-[; ;main.c: 296:             l++;
-[e ++ _l -> 1 `i ]
-"297
-[; ;main.c: 297:             f = 1;
-[e = _f -> -> 1 `i `uc ]
-"299
-[; ;main.c: 299:              if(i == 0){
-[e $ ! == _i -> 0 `i 431  ]
+[e $U 419  ]
+"257
+[; ;main.c: 257:                      else if(cancion[j][2] == 0){
+[e :U 415 ]
+[e $ ! == *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 0 `i `f 420  ]
 {
-"300
-[; ;main.c: 300:              f = 0;
-[e = _f -> -> 0 `i `uc ]
-"301
-[; ;main.c: 301:          }
-}
-[e :U 431 ]
-"304
-[; ;main.c: 304:     }
+"258
+[; ;main.c: 258:                         WriteCmdXLCD(0x01);
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
+"259
+[; ;main.c: 259:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"260
+[; ;main.c: 260:                            LCD_gotoXY(k,leerADC(0));
+[e ( _LCD_gotoXY (2 , _k ( _leerADC (1 -> 0 `i ]
+"261
+[; ;main.c: 261:                             WriteDataXLCD(0);
+[e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
+"262
+[; ;main.c: 262:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"263
+[; ;main.c: 263:                             LCD_gotoXY(1,l);
+[e ( _LCD_gotoXY (2 , -> 1 `i _l ]
+"264
+[; ;main.c: 264:                             WriteDataXLCD(1);
+[e ( _WriteDataXLCD (1 -> -> 1 `i `uc ]
+"265
+[; ;main.c: 265:                             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"266
+[; ;main.c: 266:                             LCD_gotoXY(1,12);
+[e ( _LCD_gotoXY (2 , -> 1 `i -> 12 `i ]
+"267
+[; ;main.c: 267:                             sprintf(buffer1,"%i",puntos);
+[e ( _sprintf (1 , (. , &U _buffer1 :s 4C _puntos ]
+"268
+[; ;main.c: 268:                              putrsXLCD(buffer1);
+[e ( _putrsXLCD (1 -> &U _buffer1 `*Cuc ]
+"270
+[; ;main.c: 270:                                if(leerADC(0) == l && k == 1){
+[e $ ! && == ( _leerADC (1 -> 0 `i _l == _k -> 1 `i 421  ]
+{
+"271
+[; ;main.c: 271:                                    puntos = puntos - contador;
+[e = _puntos - _puntos _contador ]
+"272
+[; ;main.c: 272:                                }
 }
 [e :U 421 ]
+"274
+[; ;main.c: 274:                          silencio(vel*cancion[j][0],cancion[j][1]);
+[e ( _silencio (2 , -> * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux `i *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux ]
+"277
+[; ;main.c: 277:                  tiempo = tiempo + ((vel*cancion[j][0])/1000);
+[e = _tiempo + _tiempo / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f ]
+"278
+[; ;main.c: 278:                  tiempo2 = tiempo2 + ((vel*cancion[j][0])/1000);
+[e = _tiempo2 -> + -> _tiempo2 `f / * -> _vel `f *U + &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _cancion * -> -> _j `ui `ux -> * -> # *U &U *U &U _cancion `ui -> -> 3 `i `ui `ux `ui `ux -> -> 1000 `i `f `i ]
+"280
+[; ;main.c: 280:                           if(tiempo2 >= 1){
+[e $ ! >= _tiempo2 -> 1 `i 422  ]
+{
+"281
+[; ;main.c: 281:                               puntos = puntos + contador;
+[e = _puntos + _puntos _contador ]
+"282
+[; ;main.c: 282:                               tiempo2 = 0;
+[e = _tiempo2 -> 0 `i ]
+"283
+[; ;main.c: 283:                              }
+}
+[e :U 422 ]
+"284
+[; ;main.c: 284:                             if(tiempo >= 15){
+[e $ ! >= _tiempo -> -> 15 `i `f 423  ]
+{
+"285
+[; ;main.c: 285:                                 contador ++;
+[e ++ _contador -> 1 `i ]
+"286
+[; ;main.c: 286:                               vel = vel/contador;
+[e = _vel / _vel _contador ]
+"287
+[; ;main.c: 287:                                 tiempo = 0;
+[e = _tiempo -> -> 0 `i `f ]
+"289
+[; ;main.c: 289:                             }
+}
+[e :U 423 ]
+"293
+[; ;main.c: 293:                      }
+}
 [e :U 420 ]
+[e :U 419 ]
+"294
+[; ;main.c: 294:               WriteCmdXLCD(0x01);
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
+"295
+[; ;main.c: 295:             _delay((unsigned long)((1)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"296
+[; ;main.c: 296:             i--;
+[e -- _i -> 1 `i ]
+"297
+[; ;main.c: 297:             l++;
+[e ++ _l -> 1 `i ]
+"298
+[; ;main.c: 298:             f = 1;
+[e = _f -> -> 1 `i `uc ]
+"300
+[; ;main.c: 300:              if(i == 0){
+[e $ ! == _i -> 0 `i 424  ]
+{
+"301
+[; ;main.c: 301:              f = 0;
+[e = _f -> -> 0 `i `uc ]
+"302
+[; ;main.c: 302:          }
+}
+[e :U 424 ]
 "305
-[; ;main.c: 305:    }
+[; ;main.c: 305:     }
+}
+[e :U 414 ]
+[e :U 413 ]
+"306
+[; ;main.c: 306:    }
 }
 [e ++ _j -> 1 `i ]
-[e $ < _j -> 44 `i 406  ]
-[e :U 407 ]
+[e $ < _j -> 44 `i 399  ]
+[e :U 400 ]
 }
-"307
-[; ;main.c: 307:     }
+"308
+[; ;main.c: 308:     }
 }
-[e :U 403 ]
-"133
-[; ;main.c: 133:     while(puntos >= 0){
-[e $ >= _puntos -> 0 `i 404  ]
-[e :U 405 ]
-"309
-[; ;main.c: 309: return 2;
-[e ) -> 2 `i ]
-[e $UE 402  ]
+[e :U 396 ]
+"134
+[; ;main.c: 134:     while(puntos >= 0){
+[e $ >= _puntos -> 0 `i 397  ]
+[e :U 398 ]
 "310
-[; ;main.c: 310:  }
-[e :UE 402 ]
-}
+[; ;main.c: 310: return 2;
+[e ) -> 2 `i ]
+[e $UE 395  ]
 "311
-[; ;main.c: 311: const char personaje[]={ 0b00011111,
+[; ;main.c: 311:  }
+[e :UE 395 ]
+}
+"312
+[; ;main.c: 312: const char personaje[]={ 0b00011111,
 [v _personaje `Cuc ~T0 @X0 -> 9 `i e ]
 [i _personaje
 :U ..
@@ -1783,8 +1700,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"320
-[; ;main.c: 320: const char personajeD[]={ 0b00011100,
+"321
+[; ;main.c: 321: const char personajeD[]={ 0b00011100,
 [v _personajeD `Cuc ~T0 @X0 -> 8 `i e ]
 [i _personajeD
 :U ..
@@ -1798,8 +1715,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"328
-[; ;main.c: 328: const char personajeI[]={0b00000111,
+"329
+[; ;main.c: 329: const char personajeI[]={0b00000111,
 [v _personajeI `Cuc ~T0 @X0 -> 8 `i e ]
 [i _personajeI
 :U ..
@@ -1813,146 +1730,101 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"336
-[; ;main.c: 336: void LCD_Init(void){
+"337
+[; ;main.c: 337: void LCD_Init(void){
 [v _LCD_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCD_Init ]
 [f ]
-"337
-[; ;main.c: 337:   OpenXLCD(0b00101100 & 0b00111000 );
-[e ( _OpenXLCD (1 -> & -> 44 `i -> 56 `i `uc ]
 "338
-[; ;main.c: 338:     while(BusyXLCD());
-[e $U 433  ]
-[e :U 434 ]
-[e :U 433 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 434  ]
-[e :U 435 ]
+[; ;main.c: 338:   OpenXLCD(0b00101100 & 0b00111000 );
+[e ( _OpenXLCD (1 -> & -> 44 `i -> 56 `i `uc ]
 "339
-[; ;main.c: 339:     WriteCmdXLCD(0x06);
-[e ( _WriteCmdXLCD (1 -> -> 6 `i `uc ]
+[; ;main.c: 339:     while(BusyXLCD());
+[e $U 426  ]
+[e :U 427 ]
+[e :U 426 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 427  ]
+[e :U 428 ]
 "340
-[; ;main.c: 340:     WriteCmdXLCD(0x0C);
-[e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
+[; ;main.c: 340:     WriteCmdXLCD(0x06);
+[e ( _WriteCmdXLCD (1 -> -> 6 `i `uc ]
 "341
-[; ;main.c: 341: }
-[e :UE 432 ]
+[; ;main.c: 341:     WriteCmdXLCD(0x0C);
+[e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
+"342
+[; ;main.c: 342: }
+[e :UE 425 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"346
-[; ;main.c: 346: void main(void) {
+"347
+[; ;main.c: 347: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"347
-[; ;main.c: 347:      ADCON1= 15;
-[e = _ADCON1 -> -> 15 `i `uc ]
 "348
-[; ;main.c: 348:      int i = 1;
+[; ;main.c: 348:      ADCON1= 15;
+[e = _ADCON1 -> -> 15 `i `uc ]
+"349
+[; ;main.c: 349:      int i = 1;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 1 `i ]
-"349
-[; ;main.c: 349:      int f = 0;
+"350
+[; ;main.c: 350:      int f = 0;
 [v _f `i ~T0 @X0 1 a ]
 [e = _f -> 0 `i ]
-"350
-[; ;main.c: 350:        confT0();
-[e ( _confT0 ..  ]
 "351
-[; ;main.c: 351:        confADC();
+[; ;main.c: 351:        confT0();
+[e ( _confT0 ..  ]
+"352
+[; ;main.c: 352:        confADC();
 [e ( _confADC ..  ]
-"353
-[; ;main.c: 353:     TRISA = 0b00010001;
-[e = _TRISA -> -> 17 `i `uc ]
 "354
-[; ;main.c: 354:     TRISB = 0b11111101;
-[e = _TRISB -> -> 253 `i `uc ]
+[; ;main.c: 354:     TRISA = 0b00010001;
+[e = _TRISA -> -> 17 `i `uc ]
 "355
-[; ;main.c: 355:      vel = 2000;
+[; ;main.c: 355:     TRISB = 0b11111101;
+[e = _TRISB -> -> 253 `i `uc ]
+"356
+[; ;main.c: 356:      vel = 2000;
 [e = _vel -> 2000 `i ]
-"357
-[; ;main.c: 357:     LCD_Init();
+"358
+[; ;main.c: 358:     LCD_Init();
 [e ( _LCD_Init ..  ]
-"359
-[; ;main.c: 359:         WriteCmdXLCD(0x01);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
 "360
-[; ;main.c: 360:         LCD_WriteChr_CGRAM(personaje,0);
-[e ( _LCD_WriteChr_CGRAM (2 , &U _personaje -> -> 0 `i `uc ]
-"361
-[; ;main.c: 361:         LCD_WriteChr_CGRAM(personajeD,1);
-[e ( _LCD_WriteChr_CGRAM (2 , &U _personajeD -> -> 1 `i `uc ]
-"362
-[; ;main.c: 362:         LCD_WriteChr_CGRAM(personajeI,3);
-[e ( _LCD_WriteChr_CGRAM (2 , &U _personajeI -> -> 3 `i `uc ]
-"363
-[; ;main.c: 363:         _delay((unsigned long)((500)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"365
-[; ;main.c: 365:         while(1){
-[e :U 438 ]
-{
-"368
-[; ;main.c: 368:                           WriteCmdXLCD(0x01);
+[; ;main.c: 360:         WriteCmdXLCD(0x01);
 [e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"369
-[; ;main.c: 369:             _delay((unsigned long)((1)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"370
-[; ;main.c: 370:             putrsXLCD("Presionar boton");
-[e ( _putrsXLCD (1 :s 5C ]
-"371
-[; ;main.c: 371:             while(f == 0){
-[e $U 440  ]
-[e :U 441 ]
+"361
+[; ;main.c: 361:         LCD_WriteChr_CGRAM(personaje,0);
+[e ( _LCD_WriteChr_CGRAM (2 , &U _personaje -> -> 0 `i `uc ]
+"362
+[; ;main.c: 362:         LCD_WriteChr_CGRAM(personajeD,1);
+[e ( _LCD_WriteChr_CGRAM (2 , &U _personajeD -> -> 1 `i `uc ]
+"363
+[; ;main.c: 363:         LCD_WriteChr_CGRAM(personajeI,3);
+[e ( _LCD_WriteChr_CGRAM (2 , &U _personajeI -> -> 3 `i `uc ]
+"364
+[; ;main.c: 364:         _delay((unsigned long)((500)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"366
+[; ;main.c: 366:         while(1){
+[e :U 431 ]
 {
-"372
-[; ;main.c: 372:                 cancion1();
+"367
+[; ;main.c: 367:                 cancion1();
 [e ( _cancion1 ..  ]
-"373
-[; ;main.c: 373:                              if(PORTBbits.RB0 == 1){
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 443  ]
-{
-"374
-[; ;main.c: 374:                                     f = 0;
-[e = _f -> 0 `i ]
-"375
-[; ;main.c: 375:                                 }
+"369
+[; ;main.c: 369:         }
 }
-[e $U 444  ]
-"376
-[; ;main.c: 376:                                 else{
-[e :U 443 ]
-{
-"377
-[; ;main.c: 377:                                     f = 2;
-[e = _f -> 2 `i ]
-"378
-[; ;main.c: 378:                                 }
-}
-[e :U 444 ]
-"379
-[; ;main.c: 379:             }
-}
-[e :U 440 ]
+[e :U 430 ]
+[e $U 431  ]
+[e :U 432 ]
 "371
-[; ;main.c: 371:             while(f == 0){
-[e $ == _f -> 0 `i 441  ]
-[e :U 442 ]
-"382
-[; ;main.c: 382:         }
-}
-[e :U 437 ]
-[e $U 438  ]
-[e :U 439 ]
-"384
-[; ;main.c: 384: }
-[e :UE 436 ]
+[; ;main.c: 371: }
+[e :UE 429 ]
 }
 [p f _sprintf 8388736 ]
-[a 5C 80 114 101 115 105 111 110 97 114 32 98 111 116 111 110 0 ]
 [a 1C 37 105 0 ]
 [a 2C 37 105 0 ]
 [a 3C 37 105 0 ]

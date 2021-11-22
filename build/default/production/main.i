@@ -5912,6 +5912,7 @@ void LCD_gotoXY(int x,int y);
 void LCD_WriteChr_CGRAM( const char *buffer, unsigned char Addres);
 # 12 "main.c" 2
 
+
   char buffer1[23];
     char buffer[20];
     int puntos = 0;
@@ -5949,7 +5950,7 @@ void LCD_WriteChr_CGRAM( const char *buffer, unsigned char Addres);
          TMR0 = tfrec;
          while(INTCONbits.TMR0IF==0);
          INTCONbits.TMR0IF=0;
-}
+    }
 
  }
  void silencio(int duracion, float tfrec){
@@ -5966,13 +5967,13 @@ void LCD_WriteChr_CGRAM( const char *buffer, unsigned char Addres);
                                 }
             PORTBbits.RB1 = 0;
            TMR0 = tfrec;
-           while(INTCONbits.TMR0IF==0);
-           INTCONbits.TMR0IF=0;
+
+
 
         PORTBbits.RB1=0;
          TMR0 = tfrec;
-         while(INTCONbits.TMR0IF==0);
-         INTCONbits.TMR0IF=0;
+
+
 }
  }
 
@@ -5990,19 +5991,7 @@ void LCD_WriteChr_CGRAM( const char *buffer, unsigned char Addres);
 
 
  }
-  void confT1(){
-
-    T1CONbits.RD16 = 1;
-      T1CONbits.T1CKPS = 0b11;
-      T1CONbits.T1OSCEN = 1;
-      T1CONbits.T1SYNC = 1;
-      T1CONbits.TMR1CS = 0;
-      T1CONbits.TMR1ON = 0b110;
-    TMR1H = 0xFF;
-    TMR1L = 0xFF;
-
- }
-
+# 105 "main.c"
  void confADC(){
      ADCON1 = 0b00001110;
     ADCON2 = 0b10111010;
@@ -6042,7 +6031,7 @@ if(i < 15 && l >= 0 && f == 0){
 
                             WriteCmdXLCD(0x01);
                             _delay((unsigned long)((1)*(20000000/4000.0)));
-                           LCD_gotoXY(k,leerADC(0));
+                            LCD_gotoXY(k,leerADC(0));
                             WriteDataXLCD(0);
                             _delay((unsigned long)((1)*(20000000/4000.0)));
                             LCD_gotoXY(1,l);
@@ -6193,7 +6182,7 @@ else if(i >= 0 && l < 15 && f == 1 ){
 
                      }
               WriteCmdXLCD(0x01);
-                            _delay((unsigned long)((1)*(20000000/4000.0)));
+            _delay((unsigned long)((1)*(20000000/4000.0)));
             i--;
             l++;
             f = 1;
@@ -6265,21 +6254,7 @@ void main(void) {
         _delay((unsigned long)((500)*(20000000/4000.0)));
 
         while(1){
-
-
-                          WriteCmdXLCD(0x01);
-            _delay((unsigned long)((1)*(20000000/4000.0)));
-            putrsXLCD("Presionar boton");
-            while(f == 0){
                 cancion1();
-                             if(PORTBbits.RB0 == 1){
-                                    f = 0;
-                                }
-                                else{
-                                    f = 2;
-                                }
-            }
-
 
         }
 

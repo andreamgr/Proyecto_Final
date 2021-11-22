@@ -10,6 +10,7 @@
 #include <xc.h>
 #include "conf.h"
 #include "LCD_lib.h"
+
   char buffer1[23];
     char buffer[20];
     int puntos = 0;
@@ -47,7 +48,7 @@
          TMR0 = tfrec;
          while(INTCONbits.TMR0IF==0);
          INTCONbits.TMR0IF=0;
-}
+    }
     
  }
  void silencio(int duracion, float tfrec){  //funcion generadora de notas, periodo de la nota y duracion de esta
@@ -64,13 +65,13 @@
                                 }
             PORTBbits.RB1 = 0;
            TMR0 = tfrec;
-           while(INTCONbits.TMR0IF==0);
-           INTCONbits.TMR0IF=0;
+         //  while(INTCONbits.TMR0IF==0);
+       //    INTCONbits.TMR0IF=0;
   
         PORTBbits.RB1=0;
          TMR0 = tfrec;
-         while(INTCONbits.TMR0IF==0);
-         INTCONbits.TMR0IF=0;
+   //      while(INTCONbits.TMR0IF==0);
+     //    INTCONbits.TMR0IF=0;
 }
  }
 
@@ -88,7 +89,7 @@
 
 
  }
-  void confT1(){
+  /*void confT1(){
      //11000010
     T1CONbits.RD16 = 1; //16 bits
       T1CONbits.T1CKPS = 0b11;  //PREESCALADOR 8
@@ -99,7 +100,7 @@
     TMR1H = 0xFF; //Registro TMR1 =  55535
     TMR1L = 0xFF;
 
- }
+ }*/
 
  void confADC(){
      ADCON1 = 0b00001110;
@@ -140,7 +141,7 @@ if(i < 15 && l >= 0 && f == 0){
                             
                             WriteCmdXLCD(BORRAR_LCD);
                             __delay_ms(1);
-                           LCD_gotoXY(k,leerADC(0));
+                            LCD_gotoXY(k,leerADC(0));
                             putcXLCD(0);
                             __delay_ms(1);    
                             LCD_gotoXY(1,l);
@@ -291,7 +292,7 @@ else if(i >= 0 &&  l < 15 && f == 1 ){
 
                      }
               WriteCmdXLCD(BORRAR_LCD);
-                            __delay_ms(1);
+            __delay_ms(1);
             i--;
             l++;
             f = 1;
